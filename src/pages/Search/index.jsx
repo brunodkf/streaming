@@ -1,6 +1,6 @@
 const Search = () => {
     return (
-        <div className='w-svw h-svh bg-orange-300'>
+        <div className='w-svw h-svh bg-cinza-claro'>
             Search
         </div>
     )
