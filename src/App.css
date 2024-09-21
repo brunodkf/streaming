@@ -1,0 +1,9 @@
+.banner:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100svw;
+    height: 100svh;
+    background: rgb(40, 39, 39);
+    background: radial-gradient(circle, rgba(40, 39, 39, 0.07244616596638653) 56%, rgba(0, 0, 0, 1) 100%);
+}
