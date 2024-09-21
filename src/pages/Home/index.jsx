@@ -128,10 +128,9 @@ const Home = () => {
     return (
         <>
             <section className="banner w-screen h-screen bg-cover bg-no-repeat bg-center flex items-center justify-center before:content-[''] before:absolute before:w-screen before:h-screen before:bg-preto-before " style={{ backgroundImage: `url(${banner.background})` }}>
-                <div className="banner__container container z-10 relative bg-slate-900">
-                    <img className='w-1/3' src={banner.poster} alt="" />
-                    <h1 className='font-bold text-white'>{banner.titulo ? banner.titulo : banner.nome}</h1>
-
+                <div className="banner__container container z-10 relative ">
+                    {/* <img className='w-1/3' src={banner.poster} alt="" /> */}
+                    {/* <h1 className='font-bold text-white'>{banner.titulo ? banner.titulo : banner.nome}</h1> */}
                     <img src={banner.logo} alt="" />
                     <p className='text-white'>{banner.sinopse}</p>
                 </div>
