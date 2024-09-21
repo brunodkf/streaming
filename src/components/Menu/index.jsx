@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { RiHomeLine } from "react-icons/ri";
 import { RiSearchLine } from "react-icons/ri";
 import { RiUser3Line } from "react-icons/ri";
+import { RiMessageLine } from "react-icons/ri";
 import { GiWolfHowl } from "react-icons/gi";
 
 const Menu = () => {
@@ -12,22 +13,27 @@ const Menu = () => {
                 <ul className='w-full flex items-center justify-between'>
                     <li>
                         <Link to='/'>
-                            <RiHomeLine className='text-white text-3xl' />
+                            <RiHomeLine className='text-white text-2xl' />
                         </Link>
                     </li>
                     <li>
                         <Link to='/search'>
-                            <RiSearchLine className='text-white text-3xl' />
+                            <RiSearchLine className='text-white text-2xl' />
                         </Link>
                     </li>
                     <li>
                         <Link to='/'>
-                            <GiWolfHowl className='text-white text-3xl' />
+                            <GiWolfHowl className='text-white text-2xl' />
                         </Link>
                     </li>
                     <li>
                         <Link to='/'>
-                            <RiUser3Line className='text-white text-3xl' />
+                            <RiMessageLine className='text-white text-2xl' />
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to='/'>
+                            <RiUser3Line className='text-white text-2xl' />
                         </Link>
                     </li>
                 </ul>
