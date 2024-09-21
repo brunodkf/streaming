@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { RiHomeLine } from "react-icons/ri";
 import { RiSearchLine } from "react-icons/ri";
 import { RiUser3Line } from "react-icons/ri";
-import { RiMessageLine } from "react-icons/ri";
+import { GiWolfHowl } from "react-icons/gi";
 
 const Menu = () => {
     return (
@@ -22,7 +22,7 @@ const Menu = () => {
                     </li>
                     <li>
                         <Link to='/'>
-                            <RiMessageLine className='text-white text-3xl' />
+                            <GiWolfHowl className='text-white text-3xl' />
                         </Link>
                     </li>
                     <li>
