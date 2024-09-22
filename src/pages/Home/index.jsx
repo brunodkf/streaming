@@ -128,8 +128,8 @@ const Home = () => {
     return (
         <>
             <section className="banner w-svw h-svh bg-cover bg-no-repeat bg-center flex items-end before:content-[''] before:absolute before:w-svw before:h-svh before:bg-preto-before lg:items-center lg:justify-center " style={{ backgroundImage: `url(${banner.background})` }}>
-                <div className="banner__container container flex flex-col justify-between h-3/4  z-10 relative p-3 mx-auto bg-gradient-to-t from-10% from-preto-claro">
-                    <div className='banner__informacoes'>
+                <div className="banner__container lg:container flex flex-col justify-between w-full h-3/4 z-10 relative p-3 mx-auto bg-gradient-to-t from-10% from-preto-claro ">
+                    <div className='banner__informacoes container'>
                         <ol className='flex flex-wrap gap-1 pb-2'>
                             {
                                 banner ? banner.genero?.map((item, index) => (
