@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const apiKey = import.meta.env.VITE_API_KEY;
 const chamadaApi = import.meta.env.VITE_API;
@@ -81,7 +82,7 @@ const Home = () => {
 
                 } catch (error) {
                     console.log(error);
-                    {error && <p className="text-red-500">Ocorreu um erro ao carregar os dados: {error}</p>}
+                    { error && <p className="text-red-500">Ocorreu um erro ao carregar os dados: {error}</p> }
                 }
             };
 
@@ -122,24 +123,44 @@ const Home = () => {
 
     const banner = randomBanner ? isolarMidia(randomBanner) : {};
 
-    console.log(banner.genero)
+    console.log(banner)
 
     return (
         <>
-            <section className="banner w-svw h-svh bg-cover bg-no-repeat bg-center flex items-center justify-center before:content-[''] before:absolute before:w-svw before:h-svh before:bg-preto-before " style={{ backgroundImage: `url(${banner.background})` }}>
-                <div className="banner__container container z-10 relative p-3">
-                    <ol className='flex flex-wrap gap-1'>
-                        {
-                            banner ? banner.genero?.map((item, index) => (
-                                <li className='text-white p-2 py-1 rounded-md m-1 bg-cinza-transparente' key={index}>{item.name}</li>
-                            )) : null
-                        }
-                    </ol>
-                    {/* <img className='w-1/3' src={banner.poster} alt="" /> */}
-                    {/* <h1 className='font-bold text-white'>{banner.titulo ? banner.titulo : banner.nome}</h1> */}
-                    <img className='max-w-64 aspect-auto' src={banner.logo} alt="" />
-                    <p className='text-white'>{banner.sinopse || 'sinopse não disponivel'}</p>
+            <section className="banner w-svw h-svh bg-cover bg-no-repeat bg-center flex items-end before:content-[''] before:absolute before:w-svw before:h-svh before:bg-preto-before lg:items-center lg:justify-center " style={{ backgroundImage: `url(${banner.background})` }}>
+                <div className="banner__container container flex flex-col justify-between h-3/4  z-10 relative p-3 mx-auto bg-gradient-to-t from-10% from-preto-claro">
+                    <div className='banner__informacoes'>
+                        <ol className='flex flex-wrap gap-1 pb-2'>
+                            {
+                                banner ? banner.genero?.map((item, index) => (
+                                    <li className='text-white p-2 py-1 rounded-md m-1 bg-cinza-transparente' key={index}>{item.name}</li>
+                                )) : null
+                            }
+                        </ol>
+                        {/* <img className='w-1/3' src={banner.poster} alt="" /> */}
+
+                        {/* <p className='text-white'>{banner.sinopse || 'sinopse não disponivel'}</p> */}
+                        <img className='max-w-64 aspect-auto pb-2' src={banner.logo} alt="" />
+                        <h1 className='font-bold text-white'>{banner.titulo ? banner.titulo : banner.nome}</h1>
+
+                        <div>
+                            <button>
+                                Assistir mais tarde
+                            </button>
+                            <button>
+                                Detalhes
+                            </button>
+                        </div>
+                    </div>
+                    <div className='banner__trailers h-2/4 bg-slate-800'>
+
+                    </div>
                 </div>
+            </section>
+
+
+            <section className='w-svw h-svh bg-slate-900'>
+
             </section>
         </>
     )
