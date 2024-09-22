@@ -25,8 +25,8 @@ const Home = () => {
                 ])
 
                 setListPopular(popularResposta.data);
-                    setTrendingTv(seriesResposta.data);
-                    setListRecomendados(recomendadoResposta.data)
+                setTrendingTv(seriesResposta.data);
+                setListRecomendados(recomendadoResposta.data)
 
             } catch (err) {
                 setError(err.message); // Salva o erro no estado
@@ -63,7 +63,7 @@ const Home = () => {
     const [infoTrailersBR, setInfoTrailersBR] = useState(null);
     const [infoImagens, setInfoImagens] = useState(null);
 
-    useEffect(()=>{
+    useEffect(() => {
         if (randomBanner) {
             const getInfos = async () => {
                 try {
@@ -81,6 +81,7 @@ const Home = () => {
 
                 } catch (error) {
                     console.log(error);
+                    {error && <p className="text-red-500">Ocorreu um erro ao carregar os dados: {error}</p>}
                 }
             };
 
@@ -95,24 +96,22 @@ const Home = () => {
 
         const generos = [];
         const logos = [];
-        const randomLogo = Math.floor(Math.random() * logos?.length)
+        const randomLogo = Math.floor(Math.random() * logos?.length);
 
-        infoMidia ? infoMidia.genres.map(e => generos.push(e)) : null;
+        infoMidia ? infoMidia.genres?.map(e => generos.push(e)) : null;
 
-        if(infoImagens){
-            infoImagens.logos.map((e)=>{
+        if (infoImagens) {
+            infoImagens.logos.map((e) => {
                 e.iso_639_1 == "pt" || e.iso_639_1 == "en" ? logos.push(e.file_path) : null;
             })
         }
-
-        
 
         return {
             id: mid.id,
             midia: mid.media_type,
             background: `https://image.tmdb.org/t/p/original${mid.backdrop_path}`,
             poster: `https://image.tmdb.org/t/p/original${mid.poster_path}`,
-            logo: `https://image.tmdb.org/t/p/original${logos[randomLogo]}`, 
+            logo: `https://image.tmdb.org/t/p/original${logos[randomLogo]}`,
             genero: generos,
             sinopse: mid.overview,
             titulo: mid.title,
@@ -121,18 +120,25 @@ const Home = () => {
         }
     }
 
-    const banner = randomBanner ?  isolarMidia(randomBanner) : {};
+    const banner = randomBanner ? isolarMidia(randomBanner) : {};
 
-    // console.log(banner.logo)
+    console.log(banner.genero)
 
     return (
         <>
             <section className="banner w-svw h-svh bg-cover bg-no-repeat bg-center flex items-center justify-center before:content-[''] before:absolute before:w-svw before:h-svh before:bg-preto-before " style={{ backgroundImage: `url(${banner.background})` }}>
-                <div className="banner__container container z-10 relative ">
+                <div className="banner__container container z-10 relative p-3">
+                    <ol className='flex flex-wrap gap-1'>
+                        {
+                            banner ? banner.genero?.map((item, index) => (
+                                <li className='text-white p-2 py-1 rounded-md m-1 bg-cinza-transparente' key={index}>{item.name}</li>
+                            )) : null
+                        }
+                    </ol>
                     {/* <img className='w-1/3' src={banner.poster} alt="" /> */}
                     {/* <h1 className='font-bold text-white'>{banner.titulo ? banner.titulo : banner.nome}</h1> */}
-                    <img src={banner.logo} alt="" />
-                    <p className='text-white'>{banner.sinopse}</p>
+                    <img className='max-w-64 aspect-auto' src={banner.logo} alt="" />
+                    <p className='text-white'>{banner.sinopse || 'sinopse não disponivel'}</p>
                 </div>
             </section>
         </>

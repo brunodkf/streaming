@@ -18,7 +18,8 @@ export default {
         },
         cinza: {
           escuro: '#41494F',
-          claro: '#6D7C83'
+          claro: '#6D7C83',
+          transparente: '#6d7c837c'
         }
       },
       fontFamily: {
