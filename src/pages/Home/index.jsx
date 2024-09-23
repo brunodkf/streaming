@@ -131,8 +131,8 @@ const Home = () => {
     return (
         <>
             <section className="banner w-svw h-svh bg-cover bg-no-repeat bg-center flex items-end before:content-[''] before:absolute before:w-svw before:h-svh before:bg-preto-before lg:items-center lg:justify-center " style={{ backgroundImage: `url(${banner.background})` }}>
-                <div className="banner__container lg:container flex flex-col justify-between w-full h-3/4 z-10 relative p-3 mx-auto bg-gradient-to-t from-10% from-preto-claro ">
-                    <div className='banner__informacoes container'>
+                <div className="banner__container lg:container flex flex-col justify-between w-full h-3/4 z-10 relative mx-auto bg-gradient-to-t from-10% from-preto-claro ">
+                    <div className='banner__informacoes container p-3'>
                         <ol className='flex flex-wrap gap-1 pb-2'>
                             {
                                 banner ? banner.genero?.map((item, index) => (
@@ -155,20 +155,20 @@ const Home = () => {
                             </button>
                         </div>
                     </div>
-                    <div className='banner__trailers h-2/4 flex items-center bg-slate-800 relative'>
+                    <div className='banner__trailers h-2/4 flex items-center bg-preto-claro relative'>
                         <Swiper
-                            className='w-2/3 h-1/2 aspect-video overflow-x-visible'
+                            className='w-full h-1/2 bg-pink-700'
                             modules={[Navigation, A11y]}
-                            spaceBetween={50}
-                            slidesPerView={1}
+                            spaceBetween={30}
+                            slidesPerView={2}
                             centeredSlides={true}
                             navigation
                             onSlideChange={() => console.log('slide change')}
                         >
-                            <SwiperSlide className=' bg-red-400'>Slide 1</SwiperSlide>
-                            <SwiperSlide className=' bg-red-400'>Slide 2</SwiperSlide>
-                            <SwiperSlide className=' bg-red-400'>Slide 3</SwiperSlide>
-                            <SwiperSlide className=' bg-red-400'>Slide 4</SwiperSlide>
+                            <SwiperSlide className=' aspect-video bg-red-400'>Slide 1</SwiperSlide>
+                            <SwiperSlide className=' aspect-video bg-red-400'>Slide 2</SwiperSlide>
+                            <SwiperSlide className=' aspect-video bg-red-400'>Slide 3</SwiperSlide>
+                            <SwiperSlide className=' aspect-video bg-red-400'>Slide 4</SwiperSlide>
                         </Swiper>
                     </div>
                 </div>
