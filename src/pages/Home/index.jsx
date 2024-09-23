@@ -143,7 +143,7 @@ const Home = () => {
                         {/* <img className='w-1/3' src={banner.poster} alt="" /> */}
 
                         {/* <p className='text-white'>{banner.sinopse || 'sinopse não disponivel'}</p> */}
-                        <img className='max-w-40 aspect-auto pb-2' src={banner.logo} alt="" />
+                        <img className='max-w-44 aspect-auto pb-2' src={banner.logo} alt="" />
                         <h1 className='font-bold text-white'>{banner.titulo ? banner.titulo : banner.nome}</h1>
 
                         <div>
