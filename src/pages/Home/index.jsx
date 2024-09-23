@@ -8,6 +8,9 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import axios from 'axios';
 
+import { FaPlus } from "react-icons/fa6";
+import { BiInfoCircle } from "react-icons/bi";
+
 const apiKey = import.meta.env.VITE_API_KEY;
 const chamadaApi = import.meta.env.VITE_API;
 const apiVideos = import.meta.env.VITE_API_VIDEOS;
@@ -126,8 +129,6 @@ const Home = () => {
 
     const banner = randomBanner ? isolarMidia(randomBanner) : {};
 
-    // console.log(banner)
-
     return (
         <>
             <section className="banner w-svw h-svh bg-cover bg-no-repeat bg-center flex items-end before:content-[''] before:absolute before:w-svw before:h-svh before:bg-preto-before lg:items-center lg:justify-center " style={{ backgroundImage: `url(${banner.background})` }}>
@@ -136,7 +137,7 @@ const Home = () => {
                         <ol className='flex flex-wrap gap-1 pb-2'>
                             {
                                 banner ? banner.genero?.map((item, index) => (
-                                    <li className='text-white p-2 py-1 rounded-md m-1 bg-cinza-transparente text-xs' key={index}>{item.name}</li>
+                                    <li className='text-white p-2 py-1 rounded-md m-1 text-xs border-solid border-2 border-cinza-transparente' key={index}>{item.name}</li>
                                 )) : null
                             }
                         </ol>
@@ -144,14 +145,20 @@ const Home = () => {
 
                         {/* <p className='text-white'>{banner.sinopse || 'sinopse não disponivel'}</p> */}
                         <img className='max-w-44 aspect-auto pb-2' src={banner.logo} alt="" />
+                        <span>
+                            <p>{ }</p>
+                        </span>
                         <h1 className='font-bold text-white'>{banner.titulo ? banner.titulo : banner.nome}</h1>
 
-                        <div>
-                            <button>
-                                Assistir mais tarde
+                        <div className='flex gap-4 text-white pt-3'>
+                            <button className='bg-cinza-transparente p-1 px-3 text-lg rounded-md'>
+                                Sinopse
                             </button>
-                            <button>
-                                Detalhes
+                            <button className='bg-vermelho-escuro p-1 px-3 text-lg rounded-md'>
+                                <FaPlus />
+                            </button>
+                            <button className='bg-vermelho-escuro p-1 px-3 text-lg rounded-md'>
+                                <BiInfoCircle />
                             </button>
                         </div>
                     </div>
