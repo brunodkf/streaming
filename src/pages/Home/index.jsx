@@ -1,6 +1,12 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import axios from 'axios';
 
 const apiKey = import.meta.env.VITE_API_KEY;
 const chamadaApi = import.meta.env.VITE_API;
@@ -90,9 +96,6 @@ const Home = () => {
         }
     }, [randomBanner]);
 
-    // console.log(infoImagens)
-
-
     const isolarMidia = (mid) => {
 
         const generos = [];
@@ -123,7 +126,7 @@ const Home = () => {
 
     const banner = randomBanner ? isolarMidia(randomBanner) : {};
 
-    console.log(banner)
+    // console.log(banner)
 
     return (
         <>
@@ -152,8 +155,21 @@ const Home = () => {
                             </button>
                         </div>
                     </div>
-                    <div className='banner__trailers h-2/4 bg-slate-800'>
-
+                    <div className='banner__trailers h-2/4 flex items-center bg-slate-800 relative'>
+                        <Swiper
+                            className='w-2/3 h-1/2 aspect-video overflow-x-visible'
+                            modules={[Navigation, A11y]}
+                            spaceBetween={50}
+                            slidesPerView={1}
+                            centeredSlides={true}
+                            navigation
+                            onSlideChange={() => console.log('slide change')}
+                        >
+                            <SwiperSlide className=' bg-red-400'>Slide 1</SwiperSlide>
+                            <SwiperSlide className=' bg-red-400'>Slide 2</SwiperSlide>
+                            <SwiperSlide className=' bg-red-400'>Slide 3</SwiperSlide>
+                            <SwiperSlide className=' bg-red-400'>Slide 4</SwiperSlide>
+                        </Swiper>
                     </div>
                 </div>
             </section>
