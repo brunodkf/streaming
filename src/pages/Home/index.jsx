@@ -144,7 +144,7 @@ const Home = () => {
                         {/* <img className='w-1/3' src={banner.poster} alt="" /> */}
 
                         {/* <p className='text-white'>{banner.sinopse || 'sinopse não disponivel'}</p> */}
-                        <img className='max-w-44 aspect-auto pb-2' src={banner.logo} alt="" />
+                        <img className='max-w-48 aspect-auto pb-2' src={banner.logo} alt="" />
                         <span>
                             <p>{ }</p>
                         </span>
@@ -164,7 +164,7 @@ const Home = () => {
                     </div>
                     <div className='banner__trailers h-2/4 flex items-center bg-gradient-to-t from-preto-claro '>
                         <Swiper
-                            className='w-full h-1/2'
+                            className='w-full h-1/2 -mt-16'
                             modules={[Navigation, A11y]}
                             spaceBetween={30}
                             slidesPerView={2}
