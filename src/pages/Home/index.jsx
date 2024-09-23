@@ -136,7 +136,7 @@ const Home = () => {
                         <ol className='flex flex-wrap gap-1 pb-2'>
                             {
                                 banner ? banner.genero?.map((item, index) => (
-                                    <li className='text-white p-2 py-1 rounded-md m-1 bg-cinza-transparente' key={index}>{item.name}</li>
+                                    <li className='text-white p-2 py-1 rounded-md m-1 bg-cinza-transparente text-xs' key={index}>{item.name}</li>
                                 )) : null
                             }
                         </ol>
