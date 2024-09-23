@@ -131,8 +131,8 @@ const Home = () => {
     return (
         <>
             <section className="banner w-svw h-svh bg-cover bg-no-repeat bg-center flex items-end before:content-[''] before:absolute before:w-svw before:h-svh before:bg-preto-before lg:items-center lg:justify-center " style={{ backgroundImage: `url(${banner.background})` }}>
-                <div className="banner__container lg:container flex flex-col justify-between w-full h-3/4 z-10 relative mx-auto bg-gradient-to-t from-10% from-preto-claro ">
-                    <div className='banner__informacoes container p-3'>
+                <div className="banner__container lg:container flex flex-col justify-end w-full h-3/4 z-10 relative mx-auto bg-gradient-to-t from-10% from-preto-claro ">
+                    <div className='banner__informacoes container p-3 pb-0'>
                         <ol className='flex flex-wrap gap-1 pb-2'>
                             {
                                 banner ? banner.genero?.map((item, index) => (
@@ -143,7 +143,7 @@ const Home = () => {
                         {/* <img className='w-1/3' src={banner.poster} alt="" /> */}
 
                         {/* <p className='text-white'>{banner.sinopse || 'sinopse não disponivel'}</p> */}
-                        <img className='max-w-64 aspect-auto pb-2' src={banner.logo} alt="" />
+                        <img className='max-w-40 aspect-auto pb-2' src={banner.logo} alt="" />
                         <h1 className='font-bold text-white'>{banner.titulo ? banner.titulo : banner.nome}</h1>
 
                         <div>
@@ -155,14 +155,13 @@ const Home = () => {
                             </button>
                         </div>
                     </div>
-                    <div className='banner__trailers h-2/4 flex items-center bg-preto-claro relative'>
+                    <div className='banner__trailers h-2/4 flex items-center bg-gradient-to-t from-preto-claro '>
                         <Swiper
-                            className='w-full h-1/2 bg-pink-700'
+                            className='w-full h-1/2'
                             modules={[Navigation, A11y]}
                             spaceBetween={30}
                             slidesPerView={2}
                             centeredSlides={true}
-                            navigation
                             onSlideChange={() => console.log('slide change')}
                         >
                             <SwiperSlide className=' aspect-video bg-red-400'>Slide 1</SwiperSlide>
