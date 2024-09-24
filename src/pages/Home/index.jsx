@@ -127,7 +127,10 @@ const Home = () => {
 
     const banner = randomBanner ? isolarMidia(randomBanner) : {};
 
-    console.log(infoTrailers)
+
+
+    let teste = infoImagens?.posters[Math.floor(Math.random() * infoImagens?.posters?.length)].file_path;
+    console.log(teste)
 
     return (
         <>
@@ -173,17 +176,9 @@ const Home = () => {
                         >
 
                             {
-                                infoTrailersBR && infoTrailersBR.results?.map((item, index) => (
-                                    <SwiperSlide key={index} className=' aspect-video bg-red-400'>
-                                        {/* <p>{item.key}</p> */}
-                                        <ReactPlayer
-                                            url={`https://www.youtube.com/embed/${item.key}`} // Substitua com o link de vídeo correto
-                                            controls={true}   // Ativa os controles do player
-                                            width='100%' // Define a largura para responsividade
-                                            height='100%' // Define a altura para responsividade
-                                            playing={false} // Vídeo não começa automaticamente
-                                            light={false} // Mostra uma imagem em miniatura antes de iniciar o vídeo, se configurado como true
-                                        />
+                                infoTrailers && infoTrailers.results?.map((item, index) => (
+                                    <SwiperSlide key={index} className=' aspect-video bg-red-400 bg-contain bg-no-repeat bg-center' style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${infoImagens?.backdrops[Math.floor(Math.random() * infoImagens?.backdrops?.length)].file_path})` }}>
+                                        <p>{item.key}</p>
                                     </SwiperSlide>
                                 ))
                             }
