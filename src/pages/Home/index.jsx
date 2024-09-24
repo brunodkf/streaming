@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import ReactPlayer from 'react-player'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import 'swiper/css';
@@ -99,19 +100,16 @@ const Home = () => {
         }
     }, [randomBanner]);
 
+
     const isolarMidia = (mid) => {
 
         const generos = [];
         const logos = [];
         const randomLogo = Math.floor(Math.random() * logos?.length);
 
-        infoMidia ? infoMidia.genres?.map(e => generos.push(e)) : null;
+        infoImagens ? infoImagens.logos?.filter(e => e.iso_639_1 == "pt" || e.iso_639_1 == "en").map(e => logos.push(e.file_path)) : null;
 
-        if (infoImagens) {
-            infoImagens.logos.map((e) => {
-                e.iso_639_1 == "pt" || e.iso_639_1 == "en" ? logos.push(e.file_path) : null;
-            })
-        }
+        infoMidia ? infoMidia.genres?.map(e => generos.push(e)) : null;
 
         return {
             id: mid.id,
@@ -128,6 +126,8 @@ const Home = () => {
     }
 
     const banner = randomBanner ? isolarMidia(randomBanner) : {};
+
+    console.log(infoTrailers)
 
     return (
         <>
@@ -171,10 +171,22 @@ const Home = () => {
                             centeredSlides={true}
                             onSlideChange={() => console.log('slide change')}
                         >
-                            <SwiperSlide className=' aspect-video bg-red-400'>Slide 1</SwiperSlide>
-                            <SwiperSlide className=' aspect-video bg-red-400'>Slide 2</SwiperSlide>
-                            <SwiperSlide className=' aspect-video bg-red-400'>Slide 3</SwiperSlide>
-                            <SwiperSlide className=' aspect-video bg-red-400'>Slide 4</SwiperSlide>
+
+                            {
+                                infoTrailersBR && infoTrailersBR.results?.map((item, index) => (
+                                    <SwiperSlide key={index} className=' aspect-video bg-red-400'>
+                                        {/* <p>{item.key}</p> */}
+                                        <ReactPlayer
+                                            url={`https://www.youtube.com/embed/${item.key}`} // Substitua com o link de vídeo correto
+                                            controls={true}   // Ativa os controles do player
+                                            width='100%' // Define a largura para responsividade
+                                            height='100%' // Define a altura para responsividade
+                                            playing={false} // Vídeo não começa automaticamente
+                                            light={false} // Mostra uma imagem em miniatura antes de iniciar o vídeo, se configurado como true
+                                        />
+                                    </SwiperSlide>
+                                ))
+                            }
                         </Swiper>
                     </div>
                 </div>

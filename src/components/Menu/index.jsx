@@ -8,7 +8,7 @@ import { GiWolfHowl } from "react-icons/gi";
 
 const Menu = () => {
     return (
-        <div className="menu w-svw z-50 bottom-0 fixed bg-preto-claro">
+        <div className="menu w-svw z-50 bottom-0 fixed bg-preto-claro border-t-2 border-cinza-escuro">
             <nav className='menu__container container m-auto p-4 flex items-center justify-between' id="menu">
                 <ul className='w-full flex items-center justify-between'>
                     <li>
