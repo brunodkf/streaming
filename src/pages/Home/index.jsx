@@ -118,6 +118,7 @@ const Home = () => {
             poster: `https://image.tmdb.org/t/p/original${mid.poster_path}`,
             logo: `https://image.tmdb.org/t/p/original${logos[randomLogo]}`,
             genero: generos,
+            nota: infoMidia?.vote_average.toFixed(1),
             sinopse: mid.overview,
             titulo: mid.title,
             nome: mid.name,
@@ -127,7 +128,7 @@ const Home = () => {
 
     const banner = randomBanner ? isolarMidia(randomBanner) : {};
 
-    console.log(banner)
+    console.log(banner.nota)
 
     return (
         <>
@@ -141,14 +142,15 @@ const Home = () => {
                                 )) : null
                             }
                         </ol>
-                        
-                        <img className='w-1/3' src={banner.poster} alt="" />
+
+                        {/* <img className='w-1/3' src={banner.poster} alt="" /> */}
 
                         {/* <p className='text-white'>{banner.sinopse || 'sinopse não disponivel'}</p> */}
+
                         <img loading='lazy' className='max-w-48 aspect-auto pb-2' src={banner.logo} alt="" />
 
                         <span>
-                            <p>{ }</p>
+                            <p className='text-white'> ⭐ {banner.nota}</p>
                         </span>
 
                         <h1 className='font-bold text-white'>{banner.titulo ? banner.titulo : banner.nome}</h1>
