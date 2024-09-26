@@ -141,13 +141,16 @@ const Home = () => {
                                 )) : null
                             }
                         </ol>
-                        {/* <img className='w-1/3' src={banner.poster} alt="" /> */}
+                        
+                        <img className='w-1/3' src={banner.poster} alt="" />
 
                         {/* <p className='text-white'>{banner.sinopse || 'sinopse não disponivel'}</p> */}
-                        <img className='max-w-48 aspect-auto pb-2' src={banner.logo} alt="" />
+                        <img loading='lazy' className='max-w-48 aspect-auto pb-2' src={banner.logo} alt="" />
+
                         <span>
                             <p>{ }</p>
                         </span>
+
                         <h1 className='font-bold text-white'>{banner.titulo ? banner.titulo : banner.nome}</h1>
 
                         <div className='flex gap-4 text-white pt-3'>
