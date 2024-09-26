@@ -145,7 +145,6 @@ const Home = () => {
 
                         {/* <img className='w-1/3' src={banner.poster} alt="" /> */}
 
-                        {/* <p className='text-white'>{banner.sinopse || 'sinopse não disponivel'}</p> */}
 
                         <img loading='lazy' className='max-w-48 aspect-auto pb-2' src={banner.logo} alt="" />
 
@@ -154,6 +153,8 @@ const Home = () => {
                         </span>
 
                         <h1 className='font-bold text-white'>{banner.titulo ? banner.titulo : banner.nome}</h1>
+
+                        <p className='text-white pt-3 pb-3'>{banner.sinopse || 'sinopse não disponivel'}</p>
 
                         <div className='flex gap-4 text-white pt-3'>
                             <button className='bg-cinza-transparente p-1 px-3 text-lg rounded-md'>
