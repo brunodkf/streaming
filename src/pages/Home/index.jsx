@@ -127,10 +127,7 @@ const Home = () => {
 
     const banner = randomBanner ? isolarMidia(randomBanner) : {};
 
-
-
-    let teste = infoImagens?.posters[Math.floor(Math.random() * infoImagens?.posters?.length)].file_path;
-    console.log(teste)
+    console.log(banner)
 
     return (
         <>
@@ -167,7 +164,7 @@ const Home = () => {
                     </div>
                     <div className='banner__trailers h-2/4 flex items-center bg-gradient-to-t from-preto-claro '>
                         <Swiper
-                            className='w-full h-1/2 -mt-16'
+                            className='w-full h-1/3 -mt-16 '
                             modules={[Navigation, A11y]}
                             spaceBetween={30}
                             slidesPerView={2}
@@ -177,7 +174,7 @@ const Home = () => {
 
                             {
                                 infoTrailers && infoTrailers.results?.map((item, index) => (
-                                    <SwiperSlide key={index} className=' aspect-video bg-red-400 bg-contain bg-no-repeat bg-center' style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${infoImagens?.backdrops[Math.floor(Math.random() * infoImagens?.backdrops?.length)].file_path})` }}>
+                                    <SwiperSlide key={index} className='w-full h-full aspect-video bg-contain bg-no-repeat bg-center' style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${infoImagens?.backdrops[Math.floor(Math.random() * infoImagens?.backdrops?.length)].file_path})` }}>
                                         <p>{item.key}</p>
                                     </SwiperSlide>
                                 ))
