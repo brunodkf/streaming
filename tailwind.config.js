@@ -14,7 +14,8 @@ export default {
         preto: {
           escuro: '#070B0D',
           claro: '#242424',
-          before: '#212020A0'
+          before: '#212020A0',
+          transparente: '#00000062'
         },
         cinza: {
           escuro: '#41494F',
