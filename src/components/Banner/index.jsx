@@ -2,7 +2,9 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
 import ReactPlayer from 'react-player';
+
 import axios from 'axios';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import 'swiper/css';
@@ -15,6 +17,8 @@ import { BiInfoCircle } from "react-icons/bi";
 import { BsPlayCircleFill } from "react-icons/bs";
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 import { isolarMidia } from '../../services/utils';
+
+import Modal from '../Modal';
 
 const apiKey = import.meta.env.VITE_API_KEY;
 const chamadaApi = import.meta.env.VITE_API;
@@ -127,7 +131,7 @@ const Banner = ({ lista }) => {
                         }
                     </Swiper>
 
-                    <Link to='pudim' smooth={true} duration={500}>
+                    <Link to='carrousel__init' smooth={true} duration={500}>
                         <MdKeyboardDoubleArrowDown className='text-white mt-10 text-5xl border-2 border-cinza-transparente rounded-full p-2 cursor-pointer' />
                     </Link>
 
