@@ -118,7 +118,7 @@ const Banner = ({ lista }) => {
                                 <SwiperSlide key={index} >
                                     <SwiperSlide onClick={e => console.log(item.key)} className={`swiper_item w-full h-full aspect-video bg-cover bg-no-repeat bg-center relative rounded-lg overflow-clip after:content-[""] after:absolute after:top-0 after:w-full after:h-full after:block after:bg-preto-transparente `} style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${bannerImagens?.backdrops[Math.floor(Math.random() * bannerImagens?.backdrops?.length)].file_path})` }} >
                                         <span className='w-full h-full flex items-center justify-center bg-preto-transparente'>
-                                            <BsPlayCircleFill className='text-cinza-claro bg-preto-escuro text-4xl rounded-3xl' />
+                                            <BsPlayCircleFill className='text-vermelho-claro bg-white text-4xl rounded-3xl' />
                                         </span>
                                     </SwiperSlide>
                                 </SwiperSlide>
