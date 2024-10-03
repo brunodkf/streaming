@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-scroll';
 import ReactPlayer from 'react-player';
 import axios from 'axios';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -127,7 +127,10 @@ const Banner = ({ lista }) => {
                         }
                     </Swiper>
 
-                    <span className='text-white mt-10 text-2xl border-2 border-cinza-transparente rounded-full p-2 '> <MdKeyboardDoubleArrowDown /> </span>
+                    <Link to='pudim' smooth={true} duration={500}>
+                        <MdKeyboardDoubleArrowDown className='text-white mt-10 text-5xl border-2 border-cinza-transparente rounded-full p-2 cursor-pointer' />
+                    </Link>
+
                 </div>
             </div>
         </section>

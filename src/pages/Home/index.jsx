@@ -96,7 +96,7 @@ const Home = () => {
 
             <Banner lista={listaRecomendados}/>
 
-            <section className='w-svw h-svh bg-slate-900'>
+            <section id='pudim' className='w-svw h-svh bg-slate-900'>
 
             </section>
         </>
