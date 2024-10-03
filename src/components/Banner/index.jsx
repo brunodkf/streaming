@@ -13,6 +13,7 @@ import 'swiper/css/scrollbar';
 import { FaPlus } from "react-icons/fa6";
 import { BiInfoCircle } from "react-icons/bi";
 import { BsPlayCircleFill } from "react-icons/bs";
+import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 import { isolarMidia } from '../../services/utils';
 
 const apiKey = import.meta.env.VITE_API_KEY;
@@ -103,9 +104,9 @@ const Banner = ({ lista }) => {
                         </button>
                     </div>
                 </div>
-                <div className='banner__trailers h-2/4 flex items-center bg-gradient-to-t from-preto-claro '>
+                <div className='banner__trailers h-2/4 flex flex-col items-center bg-gradient-to-t from-preto-claro '>
                     <Swiper
-                        className='w-full h-1/3 -mt-16 '
+                        className='w-full h-1/3 mt-10'
                         modules={[Navigation, A11y]}
                         spaceBetween={30}
                         slidesPerView={2}
@@ -125,6 +126,8 @@ const Banner = ({ lista }) => {
                             ))
                         }
                     </Swiper>
+
+                    <span className='text-white mt-14 text-2xl border-2 border-cinza-transparente rounded-full p-2 '> <MdKeyboardDoubleArrowDown /> </span>
                 </div>
             </div>
         </section>
