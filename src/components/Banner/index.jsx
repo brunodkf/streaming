@@ -127,7 +127,7 @@ const Banner = ({ lista }) => {
                         }
                     </Swiper>
 
-                    <span className='text-white mt-14 text-2xl border-2 border-cinza-transparente rounded-full p-2 '> <MdKeyboardDoubleArrowDown /> </span>
+                    <span className='text-white mt-10 text-2xl border-2 border-cinza-transparente rounded-full p-2 '> <MdKeyboardDoubleArrowDown /> </span>
                 </div>
             </div>
         </section>
