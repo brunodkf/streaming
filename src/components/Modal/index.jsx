@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import Iframe from 'react-iframe'
+import Iframe from 'react-iframe';
+import ReactPlayer from 'react-player';
 
 import { FaWindowClose } from "react-icons/fa";
 
@@ -7,18 +8,16 @@ const youtubeEmbed = import.meta.env.VITE_YOU_TUBE;
 
 export default function Modal({ isOpen, trailer, closeModal, what, background }) {
 
-    const [modalBanner,  setModalBanner] = useState('');
+    const [modalBanner, setModalBanner] = useState('');
     const [modalPlayer, setModalPlayer] = useState('');
 
-    useEffect(()=>{
-        if(what === 'banner'){
+    useEffect(() => {
+        if (what === 'banner') {
             setModalBanner('hidden')
-        }else if(what === 'player'){
+        } else if (what === 'player') {
             setModalPlayer('absolute top-0 bg-slate-500 w-svw h-svh')
         }
     }, [what])
-
-    console.log(trailer)
 
     if (isOpen) {
         return (
@@ -29,14 +28,23 @@ export default function Modal({ isOpen, trailer, closeModal, what, background })
                         <FaWindowClose onClick={closeModal} />
                     </div>
 
-                    <Iframe
+                    <ReactPlayer
+                        url={`${youtubeEmbed}${trailer}`}
+                        className="react-player"
+                        playing={false} // define se o vídeo inicia automaticamente
+                        controls={true} // exibe os controles do vídeo
+                        width="100%"
+                        height="100%"
+                    />
+
+                    {/* <Iframe
                         src={`${youtubeEmbed}${trailer}`}
                         className="modal__video px-4 mt-4"
                         allow="autoplay; encrypted-media"
                         display="block"
                         position="relative"
                         autoplay
-                    />
+                    /> */}
                 </div>
             </div>
         )
