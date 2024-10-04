@@ -5,7 +5,7 @@ import { FaWindowClose } from "react-icons/fa";
 
 const youtubeEmbed = import.meta.env.VITE_YOU_TUBE;
 
-export default function Modal({ isOpen, trailer, closeModal, what }) {
+export default function Modal({ isOpen, trailer, closeModal, what, background }) {
 
     const [modalBanner,  setModalBanner] = useState('');
     const [modalPlayer, setModalPlayer] = useState('');
@@ -18,20 +18,20 @@ export default function Modal({ isOpen, trailer, closeModal, what }) {
         }
     }, [what])
 
-
+    console.log(trailer)
 
     if (isOpen) {
         return (
-            <div className={`modal ${modalBanner}${modalPlayer} absolute top-0 bg-slate-500 w-svw h-svh z-50`}>
-                <div className="modal__content">
-                    <div className="modal__nav">
+            <div className={`modal ${modalBanner}${modalPlayer} absolute top-0 flex flex-col items-center justify-center bg-slate-500 w-svw h-svh z-50 bg-cover bg-no-repeat bg-center`} style={{ backgroundImage: `url(${background})` }}>
+                <div className="modal__content bg-vermelho-hover w-full h-1/3 flex flex-col items-center justify-center">
+                    <div className="modal__nav w-full flex items-center justify-between px-4">
                         <h2>Assista ao trailer:</h2>
                         <FaWindowClose onClick={closeModal} />
                     </div>
 
                     <Iframe
-                        src={`${youtubeEmbed}${trailer}?autoplay=1`}
-                        className="modal__video"
+                        src={`${youtubeEmbed}${trailer}`}
+                        className="modal__video px-4 mt-4"
                         allow="autoplay; encrypted-media"
                         display="block"
                         position="relative"
