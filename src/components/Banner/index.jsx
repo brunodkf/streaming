@@ -70,8 +70,7 @@ const Banner = ({ lista }) => {
 
     const midia = randomBanner ? isolarMidia(randomBanner, bannerImagens, bannerMidia) : {};
 
-
-    // console.log(bannerTrailersBR)
+    console.log(midia)
 
     const [openModal, setOpenModal] = useState(false);  //controla o estado do modal
     const [videoModal, setVideoModal] = useState(null);
@@ -129,11 +128,10 @@ const Banner = ({ lista }) => {
                     // onSlideChange={() => console.log('slide change')}
                     >
 
-
                         {
                             (bannerTrailersBR?.results?.length > 0 ? bannerTrailersBR.results : bannerTrailers?.results)?.map((item, index) => (
                                 <SwiperSlide key={index}>
-                                    <SwiperSlide onClick={() => abreModal(item.key)} className={`swiper_item w-full h-full aspect-video bg-cover bg-no-repeat bg-center relative rounded-lg overflow-clip after:content-[""] after:absolute after:top-0 after:w-full after:h-full after:block after:bg-preto-transparente `} style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${bannerImagens?.backdrops[Math.floor(Math.random() * bannerImagens?.backdrops?.length)].file_path})` }}>
+                                    <SwiperSlide onClick={() => abreModal(item.key)} className={`swiper_item w-full h-full aspect-video bg-cover bg-no-repeat bg-center relative rounded-lg overflow-clip after:content-[""] after:absolute after:top-0 after:w-full after:h-full after:block after:bg-preto-transparente `} style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${midia?.listaBackgrounds[Math.floor(Math.random() * midia?.listaBackgrounds?.length)].file_path})` }}>
                                         <span className='w-full h-full flex items-center justify-center bg-preto-transparente'>
                                             <BsPlayCircleFill className='text-vermelho-claro bg-white text-4xl rounded-3xl' />
                                         </span>
