@@ -71,7 +71,7 @@ const Banner = ({ lista }) => {
     const midia = randomBanner ? isolarMidia(randomBanner, bannerImagens, bannerMidia) : {};
 
 
-    console.log(bannerTrailersBR)
+    // console.log(bannerTrailersBR)
 
     const [openModal, setOpenModal] = useState(false);  //controla o estado do modal
     const [videoModal, setVideoModal] = useState(null);
