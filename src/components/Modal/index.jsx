@@ -11,9 +11,9 @@ export default function Modal({ isOpen, trailer, closeModal, background }) {
         return (
             <div className={`modal  w-svw h-svh absolute top-0 flex flex-col items-center justify-center  z-50 bg-cover bg-no-repeat bg-center before:content-[''] before:absolute before:w-svw before:h-svh before:bg-preto-before`} style={{ backgroundImage: `url(${background})` }}>
                 <div className="modal__content w-full h-2/3 flex flex-col items-center justify-center z-50">
-                    <div className="modal__nav w-full flex items-center justify-between px-4 pb-4 text-xl text-white">
-                        <h2>Assista ao trailer:</h2>
-                        <FaWindowClose onClick={closeModal} />
+                    <div className="modal__nav w-full flex items-center justify-between px-4 pb-4  text-white">
+                        <h2 className='text-xl'>Assista ao trailer:</h2>
+                        <FaWindowClose className='text-3xl' onClick={closeModal} />
                     </div>
 
                     <ReactPlayer
