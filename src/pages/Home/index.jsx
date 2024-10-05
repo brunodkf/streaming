@@ -96,7 +96,7 @@ const Home = () => {
 
             <Banner lista={listaRecomendados}/>
 
-            <section id='carrousel__init' className='w-svw h-svh bg-slate-900'>
+            <section id='carrousel__init' className='w-svw h-svh bg-preto-escuro'>
 
             </section>
         </>
