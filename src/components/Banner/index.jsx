@@ -79,12 +79,12 @@ const Banner = ({ lista }) => {
         setVideoModal(e);
     }
     function closeModal() {
-        setOpenModal(false);
+        setOpenModal(false); 
     }
     return (
         <section className="banner w-svw h-svh bg-cover bg-no-repeat bg-center flex items-end before:content-[''] before:absolute before:w-svw before:h-svh before:bg-preto-before lg:items-center lg:justify-center " style={{ backgroundImage: `url(${midia.background})` }}>
-            <div className="banner__container lg:container flex flex-col justify-end w-full h-3/4 z-10 relative mx-auto bg-gradient-to-t from-10% from-preto-claro ">
-                <div className='banner__informacoes container p-3 pb-0'>
+            <div className="banner__container md:container w-full h-3/4 flex flex-col justify-end md:justify-center relative mx-auto z-10 bg-gradient-to-t from-10% from-preto-claro md:bg-none ">
+                <div className='banner__informacoes p-3 pb-0 sm:p-8'>
                     <ol className='flex flex-wrap gap-1 pb-2'>
                         {
                             midia ? midia.genero?.map((item, index) => (
@@ -95,11 +95,10 @@ const Banner = ({ lista }) => {
 
                     {/* <img className='w-1/3' src={midia.poster} alt="" /> */}
 
-
-                    <img className='max-w-48 aspect-auto pb-2' src={midia.logo} alt="" />
+                    <img className='max-w-48 aspect-auto pb-2' src={midia.logo} alt="Logo" />
 
                     <span>
-                        <p className='text-white'> ⭐ {midia.nota}</p>
+                        <p className='text-white mb-1'> ⭐ {midia.nota}</p>
                     </span>
 
                     <h1 className='font-bold text-white'>{midia.titulo ? midia.titulo : midia.nome}</h1>
@@ -118,12 +117,26 @@ const Banner = ({ lista }) => {
                         </button>
                     </div>
                 </div>
-                <div className='banner__trailers h-2/4 flex flex-col items-center bg-gradient-to-t from-preto-claro '>
+                <div className='banner__trailers h-2/4 flex flex-col items-center bg-gradient-to-t from-preto-claro md:bg-none'>
                     <Swiper
-                        className='w-full h-1/3 mt-10'
+                        className='w-full h-1/3 mt-10 sm:mt-10 '
                         modules={[Navigation, A11y]}
                         spaceBetween={30}
                         slidesPerView={2}
+                        breakpoints={{
+                            640: {
+                              slidesPerView: 3,
+                              spaceBetween: 30,
+                            },
+                            768: {
+                              slidesPerView: 3,
+                              spaceBetween: 40,
+                            },
+                            1024: {
+                              slidesPerView: 3,
+                              spaceBetween: 40,
+                            },
+                          }}
                         centeredSlides={true}
                     // onSlideChange={() => console.log('slide change')}
                     >
@@ -131,7 +144,7 @@ const Banner = ({ lista }) => {
                         {
                             (bannerTrailersBR?.results?.length > 0 ? bannerTrailersBR.results : bannerTrailers?.results)?.map((item, index) => (
                                 <SwiperSlide key={index}>
-                                    <SwiperSlide onClick={() => abreModal(item.key)} className={`swiper_item w-full h-full aspect-video bg-cover bg-no-repeat bg-center relative rounded-lg overflow-clip after:content-[""] after:absolute after:top-0 after:w-full after:h-full after:block after:bg-preto-transparente `} style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${midia?.listaBackgrounds[Math.floor(Math.random() * midia?.listaBackgrounds?.length)].file_path})` }}>
+                                    <SwiperSlide onClick={() => abreModal(item.key)} className={`swiper_item w-full h-full  aspect-video bg-cover bg-no-repeat bg-center relative rounded-lg overflow-clip after:content-[""] after:absolute after:top-0 after:w-full after:h-full after:block after:bg-preto-transparente `} style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${midia?.listaBackgrounds[Math.floor(Math.random() * midia?.listaBackgrounds?.length)].file_path})` }}>
                                         <span className='w-full h-full flex items-center justify-center bg-preto-transparente'>
                                             <BsPlayCircleFill className='text-vermelho-claro bg-white text-4xl rounded-3xl' />
                                         </span>
