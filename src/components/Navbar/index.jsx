@@ -13,8 +13,8 @@ export const Navbar = () => {
             <nav className='navbar__container container m-auto p-4 flex items-center justify-between' id="navbar">
                 <img className='w-20' src={Logo} alt="Logo" />
 
-                <div className="">
-                    <input type="search" className='bg-transparent border-cinza-transparente border-2 rounded-xl' />
+                <div className="hidden md:block">
+                    <input type="search" className=' bg-transparent border-cinza-transparente border-2 rounded-xl' />
                 </div>
 
                 <div className='flex gap-3'>
