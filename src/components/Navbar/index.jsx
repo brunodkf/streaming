@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Logo from '/logo_white.webp'
 import { CgMenu } from "react-icons/cg";
 import { IoSettingsOutline } from "react-icons/io5";
+import { RiSearchLine } from "react-icons/ri";
 import { MdSunny } from "react-icons/md";
 import { IoMoonSharp } from "react-icons/io5";
 
@@ -13,8 +14,11 @@ export const Navbar = () => {
             <nav className='navbar__container container m-auto p-4 flex items-center justify-between' id="navbar">
                 <img className='w-20' src={Logo} alt="Logo" />
 
-                <div className="hidden lg:block">
-                    <input type="search" className=' bg-transparent border-cinza-transparente border-2 rounded-xl' />
+                <div className="hidden md:flex w-2/4 border-cinza-transparente border-2 rounded-xl">
+                    <input type="search" className='w-full bg-transparent  rounded-r-none' />
+                    <button className='bg-cinza-transparente px-3 rounded-r-xl'>
+                        <RiSearchLine className='text-white text-xl' />
+                    </button>
                 </div>
 
                 <div className='flex gap-3'>
