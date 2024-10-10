@@ -84,7 +84,7 @@ const Banner = ({ lista }) => {
     return (
         <section className="banner w-svw h-svh bg-cover bg-no-repeat bg-center flex items-end before:content-[''] before:absolute before:w-svw before:h-svh before:bg-preto-before lg:items-center lg:justify-center " style={{ backgroundImage: `url(${midia.background})` }}>
             <div className="banner__container bg-blue-950 md:container w-full h-3/4 flex flex-col justify-end md:justify-center relative mx-auto z-10 bg-gradient-to-t from-10% from-preto-claro md:bg-none ">
-                <div className='banner__informacoes p-3 pb-0 sm:p-8 sm:bg-vermelho-claro md:bg-green-900 lg:bg-amber-900 md:p-0 md:px-4'>
+                <div className='banner__informacoes p-3 pb-0 sm:p-8 sm:bg-vermelho-claro md:bg-green-900 lg:bg-amber-900 custom-tab:bg-yellow-700 md:p-0 md:px-4'>
                     <ol className='flex flex-wrap gap-1 pb-2'>
                         {
                             midia ? midia.genero?.map((item, index) => (
@@ -95,7 +95,7 @@ const Banner = ({ lista }) => {
 
                     {/* <img className='w-1/3' src={midia.poster} alt="" /> */}
 
-                    <img className='max-w-48 sm:max-w-32 aspect-auto pb-2' src={midia.logo} alt="Logo" />
+                    <img className='max-w-48 sm:max-w-32 custom-tab:max-w-48 aspect-auto pb-2' src={midia.logo} alt="Logo" />
 
                     <span>
                         <p className='text-white mb-1'> ⭐ {midia.nota}</p>

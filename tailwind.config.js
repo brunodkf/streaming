@@ -23,6 +23,9 @@ export default {
           transparente: '#6d7c837c'
         }
       },
+      screens:{
+        'custom-tab': {'raw': '(max-width: 1100px) and (min-height: 1000px)'},
+      },
       fontFamily: {
         inter: ["Inter", "sans-serif"],
         gotham: ['Gotham', "sans-serif"],
