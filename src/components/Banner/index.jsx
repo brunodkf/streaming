@@ -82,9 +82,9 @@ const Banner = ({ lista }) => {
         setOpenModal(false);
     }
     return (
-        <section className="banner w-svw h-svh bg-cover bg-no-repeat bg-center flex items-end before:content-[''] before:absolute before:w-svw before:h-svh before:bg-preto-before lg:items-center lg:justify-center " style={{ backgroundImage: `url(${midia.background})` }}>
-            <div className="banner__container bg-blue-950 md:container w-full h-3/4 flex flex-col justify-end md:justify-center relative mx-auto z-10 bg-gradient-to-t from-10% from-preto-claro md:bg-none ">
-                <div className='banner__informacoes p-3 pb-0 sm:p-8 sm:bg-vermelho-claro md:bg-green-900 lg:bg-amber-900 custom-tab:bg-yellow-700 md:p-0 md:px-4'>
+        <section className="banner w-svw h-svh bg-cover bg-no-repeat bg-center flex items-end before:content-[''] before:absolute before:w-svw before:h-svh before:bg-preto-before" style={{ backgroundImage: `url(${midia.background})` }}>
+            <div className="banner__container  w-full h-3/4 flex flex-col justify-end md:justify-center relative mx-auto z-10 bg-gradient-to-t from-10% from-preto-claro md:from-preto-escuro ">
+                <div className='banner__informacoes p-3 pb-0 sm:p-8  custom-tab:bg-yellow-700  md:container md:m-auto md:p-0 md:px-4'>
                     <ol className='flex flex-wrap gap-1 pb-2'>
                         {
                             midia ? midia.genero?.map((item, index) => (
@@ -95,7 +95,7 @@ const Banner = ({ lista }) => {
 
                     {/* <img className='w-1/3' src={midia.poster} alt="" /> */}
 
-                    <img className='max-w-48 sm:max-w-32 custom-tab:max-w-48 aspect-auto pb-2' src={midia.logo} alt="Logo" />
+                    <img className='max-w-48 aspect-auto pb-2 custom-tab:max-w-48 sm:max-w-42 lg:max-w-80' src={midia.logo} alt="Logo" />
 
                     <span>
                         <p className='text-white mb-1'> ⭐ {midia.nota}</p>
@@ -106,25 +106,25 @@ const Banner = ({ lista }) => {
                     {/* <p className='text-white pt-3 pb-3'>{midia.sinopse || 'sinopse não disponivel'}</p> */}
 
                     <div className='flex gap-4 text-white pt-3'>
-                        <button className='bg-cinza-transparente p-1 px-3 text-lg rounded-md' >
+                        <button className='bg-cinza-transparente p-1 px-3 text-lg rounded-md md:text-base md:px-2' >
                             Sinopse
                         </button>
-                        <button className='bg-vermelho-escuro p-1 px-3 text-lg rounded-md'>
+                        <button className='bg-vermelho-escuro p-1 px-3 text-lg rounded-md md:text-base md:px-2'>
                             <FaPlus />
                         </button>
-                        <button className='bg-vermelho-escuro p-1 px-3 text-lg rounded-md'>
+                        <button className='bg-vermelho-escuro p-1 px-3 text-lg rounded-md md:text-base md:px-2'>
                             <BiInfoCircle />
                         </button>
                     </div>
                 </div>
                 <div className='banner__trailers h-2/4 flex flex-col items-center bg-gradient-to-t from-preto-claro md:bg-none'>
 
-                    <div className="banner__sinopse">
+                    <div className="banner__sinopse lg:container lg:px-4">
                         <p className=' hidden lg:flex text-white pt-3 pb-3'>{midia.sinopse || 'sinopse não disponivel'}</p>
                     </div>
 
                     <Swiper
-                        className='w-full h-1/3 mt-10 sm:mt-10 '
+                        className='w-full h-1/3 mt-10 sm:mt-10 lg:container'
                         modules={[Navigation, A11y]}
                         spaceBetween={30}
                         slidesPerView={2}
@@ -160,7 +160,7 @@ const Banner = ({ lista }) => {
                     </Swiper>
 
                     <Link to='carrousel__init' smooth={true} duration={500}>
-                        <MdKeyboardDoubleArrowDown className='text-white mt-10 text-5xl border-2 border-cinza-transparente rounded-full p-2 cursor-pointer' />
+                        <MdKeyboardDoubleArrowDown className='text-white mt-10 text-5xl border-2 border-cinza-transparente rounded-full p-2 cursor-pointer  md:text-4xl ' />
                     </Link>
 
                 </div>
