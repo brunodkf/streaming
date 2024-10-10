@@ -14,7 +14,7 @@ export const Navbar = () => {
             <nav className='navbar__container container m-auto p-4 flex items-center justify-between' id="navbar">
                 <img className='w-20' src={Logo} alt="Logo" />
 
-                <div className="hidden md:flex w-2/4 border-cinza-transparente border-2 rounded-xl overflow-hidden">
+                <div className="hidden md:flex custom-tab:hidden w-2/4 border-cinza-transparente border-2 rounded-xl overflow-hidden">
                     <input type="search" className='w-full bg-transparent  rounded-r-none' />
                     <button className='bg-cinza-transparente px-3'>
                         <RiSearchLine className='text-white text-xl' />
