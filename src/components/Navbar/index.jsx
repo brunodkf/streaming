@@ -22,8 +22,8 @@ export const Navbar = () => {
                 </div>
 
                 <div className='flex gap-3'>
-                    <IoSettingsOutline className='text-4xl p-2 rounded-full bg-preto-claro text-gray-50' />
-                    <MdSunny className='text-4xl p-2 rounded-full bg-preto-claro text-gray-50' />
+                    <IoSettingsOutline className='text-4xl p-2 rounded-full bg-preto-claro md:bg-cinza-transparente text-gray-50' />
+                    <MdSunny className='text-4xl p-2 rounded-full bg-preto-claro md:bg-cinza-transparente text-gray-50' />
                     <IoMoonSharp className='hidden text-4xl p-2 rounded-full bg-preto-claro text-gray-50' />
                 </div>
 

@@ -25,4 +25,10 @@
     font-display: swap;
 }
 
+body {
+    height: 100%;
+    overflow-x: clip;
+}
+
+
 @tailwind utilities;
