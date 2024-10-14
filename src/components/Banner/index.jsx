@@ -87,25 +87,25 @@ const Banner = ({ lista }) => {
 
     // Verifica a largura da tela e atualiza o estado
     useEffect(() => {
-      const handleResize = () => {
-        if (window.innerWidth >= 1024) {
-          setIsPaginationEnabled(true);
-        } else {
-          setIsPaginationEnabled(false);
-        }
-      };
-      
-      handleResize();
-  
-      window.addEventListener('resize', handleResize);
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
+        const handleResize = () => {
+            if (window.innerWidth >= 1024) {
+                setIsPaginationEnabled(true);
+            } else {
+                setIsPaginationEnabled(false);
+            }
+        };
+
+        handleResize();
+
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
     }, []);
 
 
     return (
-        <section className="banner w-svw h-svh bg-cover bg-no-repeat bg-center flex items-end before:content-[''] before:absolute before:w-svw before:h-svh before:bg-preto-before" style={{ backgroundImage: `url(${midia.background})` }}>
+        <section className="banner w-svw h-svh relative bg-cover bg-no-repeat bg-center flex items-end before:content-[''] before:absolute before:w-svw before:h-svh before:bg-preto-before" style={{ backgroundImage: `url(${midia.background})` }}>
             <div className="banner__container lg:container w-full h-3/4 flex flex-col justify-end lg:h-full lg:flex-row lg:justify-normal lg:items-center lg:px-8 md:justify-center relative mx-auto z-10 bg-gradient-to-t from-10% from-preto-claro md:from-preto-escuro lg:bg-none">
                 <div className='banner__informacoes lg:w-2/4 lg:m-0 p-3 pb-0 sm:p-8 custom-tab:bg-yellow-700  md:container md:m-auto md:p-0 md:px-4'>
                     <ol className='flex flex-wrap gap-1 pb-2'>
@@ -151,9 +151,9 @@ const Banner = ({ lista }) => {
 
                 <div className='banner__trailers lg:w-2/4 h-2/4 lg:h-3/4 flex flex-col items-center bg-gradient-to-t from-preto-claro md:bg-none'>
                     <Swiper
-                        className='w-full h-1/3 mt-10 sm:mt-10 lg:h-full lg:mt-0'
+                        className='w-full h-1/3 mt-10 sm:mt-10 lg:h-full '
                         modules={[Navigation, A11y, Scrollbar, Pagination]}
-                        pagination = {isPaginationEnabled ? { clickable: true } : false}
+                        pagination={isPaginationEnabled ? { clickable: true } : false}
                         spaceBetween={30}
                         slidesPerView={2}
                         centeredSlides={true}
@@ -163,14 +163,14 @@ const Banner = ({ lista }) => {
                                 spaceBetween: 30,
                                 direction: 'horizontal',
                                 centeredSlides: true,
-                              
+
                             },
                             768: {
                                 slidesPerView: 3,
                                 spaceBetween: 40,
                                 direction: 'horizontal',
                                 centeredSlides: true,
-                              
+
                             },
                             1024: {
                                 slidesPerView: 3,
@@ -203,6 +203,13 @@ const Banner = ({ lista }) => {
 
                 </div>
             </div>
+
+            <div className="hidden w-full bottom-6 absolute z-50 lg:block">
+                <Link to='carrousel__init' smooth={true} duration={500} className='block w-10 m-auto'>
+                    <MdKeyboardDoubleArrowDown className='text-white text-5xl border-2 border-cinza-transparente rounded-full p-2 cursor-pointer  md:text-4xl ' />
+                </Link>
+            </div>
+
 
             <Modal isOpen={openModal} background={midia.background} closeModal={closeModal} trailer={videoModal} />
         </section>
