@@ -30,5 +30,25 @@ body {
     overflow-x: clip;
 }
 
+/* Estilizando as bolinhas normais */
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background-color: #cccccc8f;
+    /* Cor padrão */
+    opacity: 1;
+    /* Garantir que o bullet esteja visível */
+    transition: background-color 0.3s ease;
+}
+
+/* Estilizando o bullet ativo */
+.swiper-pagination-bullet-active {
+    background-color: #7c0101;
+    /* Cor para o bullet ativo */
+    width: 16px;
+    height: 16px;
+    /* Tamanho maior para destacar */
+}
+
 
 @tailwind utilities;

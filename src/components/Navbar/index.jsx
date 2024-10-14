@@ -10,7 +10,7 @@ import { IoMoonSharp } from "react-icons/io5";
 export const Navbar = () => {
 
     return (
-        <div className="navbar w-svw z-10 absolute ">
+        <div className="navbar w-svw z-50 absolute ">
             <nav className='navbar__container container m-auto p-4 flex items-center justify-between' id="navbar">
                 <img className='w-20' src={Logo} alt="Logo" />
 
