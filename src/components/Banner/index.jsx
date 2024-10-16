@@ -105,7 +105,7 @@ const Banner = ({ lista }) => {
 
 
     return (
-        <section className="banner w-svw h-svh relative bg-cover bg-no-repeat bg-center flex items-end before:content-[''] before:absolute before:w-svw before:h-svh before:bg-preto-before" style={{ backgroundImage: `url(${midia.background})` }}>
+        <section className="banner w-svw h-svh relative bg-cover bg-no-repeat bg-center flex items-end overflow-clip" style={{ backgroundImage: `url(${midia.background})` }}>
             <div className="banner__container lg:container w-full h-3/4 flex flex-col justify-end lg:h-full lg:flex-row lg:justify-normal lg:items-center lg:px-8 md:justify-center relative mx-auto z-10 bg-gradient-to-t from-10% from-preto-claro md:from-preto-escuro lg:bg-none">
                 <div className='banner__informacoes lg:w-2/4 lg:m-0 p-3 pb-0 sm:p-8 custom-tab:bg-yellow-700  md:container md:m-auto md:p-0 md:px-4'>
                     <ol className='flex flex-wrap gap-1 pb-2'>
@@ -118,13 +118,13 @@ const Banner = ({ lista }) => {
 
                     {/* <img className='w-1/3' src={midia.poster} alt="" /> */}
 
-                    <img className='max-w-48 aspect-auto pb-2 custom-tab:max-w-48 sm:max-w-42 lg:max-w-64' src={midia.logo} alt="Logo" />
+                    <img className='max-w-48 aspect-auto object-cover pb-2 custom-tab:max-w-48 sm:max-w-42 lg:max-w-48 xl:max-w-64' src={midia.logo} alt="Logo" />
 
                     <div className="banner__sinopse lg:container ">
                         {/* <p className='hidden lg:flex text-white pt-3 pb-3'>{midia.sinopse || 'sinopse não disponivel'}</p> */}
                         <p className='hidden lg:flex text-white pt-3 pb-3'>
                             {
-                                midia?.sinopse?.length >= 240 ? `${midia.sinopse.slice(0, 280)} {...}` : `${midia.sinopse}`
+                                midia?.sinopse?.length >= 240 ? `${midia.sinopse.slice(0, 220)} {...}` : `${midia.sinopse}`
                             }
                         </p>
 
@@ -188,7 +188,7 @@ const Banner = ({ lista }) => {
                         {
                             (bannerTrailersBR?.results?.length > 0 ? bannerTrailersBR.results : bannerTrailers?.results)?.map((item, index) => (
 
-                                <SwiperSlide key={index} onClick={() => abreModal(item.key)} className={`swiper_item w-full h-full lg:max-w-52 lg:max-h-32 lg:m-auto lg:mr-10 aspect-video bg-cover bg-no-repeat bg-center relative rounded-lg overflow-clip after:content-[""] after:absolute after:top-0 after:w-full after:h-full after:block after:bg-preto-transparente  cursor-pointer`} style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${midia?.listaBackgrounds[Math.floor(Math.random() * midia?.listaBackgrounds?.length)].file_path})` }}>
+                                <SwiperSlide key={index} onClick={() => abreModal(item.key)} className={`swiper_item w-full h-full lg:max-w-52 lg:max-h-32 lg:m-auto lg:mr-10 aspect-video bg-cover bg-no-repeat bg-center relative rounded-lg overflow-clip after:content-[""] after:absolute after:top-0 after:w-full after:h-full after:block after:bg-preto-coverTrailer  cursor-pointer`} style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${midia?.listaBackgrounds[Math.floor(Math.random() * midia?.listaBackgrounds?.length)].file_path})` }}>
                                     <span className='w-full h-full flex items-center justify-center bg-preto-transparente'>
                                         <BsPlayCircleFill className='text-vermelho-claro bg-white text-4xl rounded-3xl' />
                                     </span>

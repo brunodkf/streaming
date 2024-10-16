@@ -10,18 +10,30 @@ import { IoMoonSharp } from "react-icons/io5";
 export const Navbar = () => {
 
     return (
-        <div className="navbar w-svw z-50 absolute ">
+        <div className="navbar w-svw z-50 absolute lg:bg-gradient-to-b from-20% from-preto-transparente ">
             <nav className='navbar__container container m-auto p-4 flex items-center justify-between' id="navbar">
                 <img className='w-20' src={Logo} alt="Logo" />
 
-                <div className="hidden md:flex custom-tab:hidden w-2/4 border-cinza-transparente border-2 rounded-xl overflow-hidden">
-                    <input type="search" className='w-full bg-transparent  rounded-r-none' />
-                    <button className='bg-cinza-transparente px-3'>
-                        <RiSearchLine className='text-white text-xl' />
-                    </button>
-                </div>
-
                 <div className='flex gap-3'>
+
+                    <ul className='hidden lg:flex items-center gap-8 text-white tracking-wider mr-10 '>
+                        <li>
+                            <Link to='/'>
+                                Início
+                            </Link>
+                        </li>
+                        <li>Filmes</li>
+                        <li>Séries</li>
+                        <li>Animes</li>
+                        <li>Contato</li>
+                    </ul>
+
+                    <Link to='/search'>
+                        <RiSearchLine className='hidden lg:block text-4xl p-2 rounded-full text-gray-50 mr-10 cursor-pointer' />  {/* SEARCH */}
+                    </Link>
+
+
+
                     <IoSettingsOutline className='text-4xl p-2 rounded-full bg-preto-claro md:bg-cinza-transparente text-gray-50' />
                     <MdSunny className='text-4xl p-2 rounded-full bg-preto-claro md:bg-cinza-transparente text-gray-50' />
                     <IoMoonSharp className='hidden text-4xl p-2 rounded-full bg-preto-claro text-gray-50' />
@@ -32,7 +44,7 @@ export const Navbar = () => {
                 {/* <ul className='hidden'>
                     <li>
                         <Link to='/'>
-                            Home
+                            Início
                         </Link>
                     </li>
                     <li>

@@ -12,6 +12,7 @@ export const isolarMidia = (midia, infoImagens, infoMidia) => {
 
 
     const listaBackgrounds = infoImagens?.backdrops?.filter(e => e.iso_639_1 == null);
+    const listaLogos = infoImagens?.logos?.filter(e => e.iso_639_1)
 
     return {
         id: midia.id,
@@ -20,6 +21,7 @@ export const isolarMidia = (midia, infoImagens, infoMidia) => {
         listaBackgrounds: listaBackgrounds,
         poster: `${urlImagens}${midia.poster_path}`,
         logo: `${urlImagens}${logos[randomLogo]}`,
+        listaLogos: listaLogos,
         genero: generos,
         nota: infoMidia?.vote_average.toFixed(1),
         sinopse: midia.overview,
