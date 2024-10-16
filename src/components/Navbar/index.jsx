@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import Logo from '/logo_white.webp'
 import { CgMenu } from "react-icons/cg";
 import { IoSettingsOutline } from "react-icons/io5";
-import { RiSearchLine } from "react-icons/ri";
+import { IoSearch } from "react-icons/io5";
 import { MdSunny } from "react-icons/md";
 import { IoMoonSharp } from "react-icons/io5";
+
+import { LuUser2 } from "react-icons/lu";
 
 export const Navbar = () => {
 
@@ -16,30 +18,34 @@ export const Navbar = () => {
 
                 <div className='flex gap-3'>
 
-                    <ul className='hidden lg:flex items-center gap-8 text-white tracking-wider mr-10 '>
+                    <ul className='hidden md:flex items-center gap-8 text-white tracking-wider mr-10 '>
                         <li>
                             <Link to='/'>
                                 Início
                             </Link>
                         </li>
-                        <li>Filmes</li>
-                        <li>Séries</li>
-                        <li>Animes</li>
-                        <li>Contato</li>
+                        <li>
+                            Filmes
+                        </li>
+                        <li>
+                            Séries
+                        </li>
+                        <li>
+                            Animes
+                        </li>
+                        <li className='hidden lg:block' >
+                            Contato
+                        </li>
                     </ul>
 
                     <Link to='/search'>
-                        <RiSearchLine className='hidden lg:block text-4xl p-2 rounded-full text-gray-50 mr-10 cursor-pointer' />  {/* SEARCH */}
+                        <IoSearch className='hidden md:block text-4xl p-2 rounded-full text-gray-50 mr-10 cursor-pointer' />  {/* SEARCH */}
                     </Link>
 
-
-
-                    <IoSettingsOutline className='text-4xl p-2 rounded-full bg-preto-claro md:bg-cinza-transparente text-gray-50' />
-                    <MdSunny className='text-4xl p-2 rounded-full bg-preto-claro md:bg-cinza-transparente text-gray-50' />
+                    <IoSettingsOutline className='text-4xl p-2 rounded-full bg-preto-claro  text-gray-50' />
+                    <LuUser2 className='text-4xl p-2 rounded-full bg-preto-claro text-gray-50' />
                     <IoMoonSharp className='hidden text-4xl p-2 rounded-full bg-preto-claro text-gray-50' />
                 </div>
-
-                <CgMenu className='hidden w-10 h-10 text-gray-50' />
 
                 {/* <ul className='hidden'>
                     <li>
