@@ -205,7 +205,7 @@ const Banner = ({ lista }) => {
             </div>
 
             <div className="hidden w-full bottom-6 absolute z-50 lg:block">
-                <Link to='carrousel__init' smooth={true} duration={500} className='block w-10 m-auto'>
+                <Link to='main__init' smooth={true} duration={500} className='block w-10 m-auto'>
                     <MdKeyboardDoubleArrowDown className='text-white text-5xl border-2 border-cinza-transparente rounded-full p-2 cursor-pointer  md:text-4xl ' />
                 </Link>
             </div>
