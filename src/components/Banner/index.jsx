@@ -105,7 +105,7 @@ const Banner = ({ lista }) => {
 
 
     return (
-        <section className="banner w-svw h-svh relative bg-cover bg-no-repeat bg-center flex items-end overflow-clip" style={{ backgroundImage: `url(${midia.background})` }}>
+        <section id='banner' className="banner w-svw h-svh relative bg-cover bg-no-repeat bg-center flex items-end overflow-clip" style={{ backgroundImage: `url(${midia.background})` }}>
             <div className="banner__container lg:container w-full h-3/4 flex flex-col justify-end lg:h-full lg:flex-row lg:justify-normal lg:items-center lg:px-8 md:justify-center relative mx-auto z-10 bg-gradient-to-t from-10% from-preto-claro md:from-preto-escuro lg:bg-none">
                 <div className='banner__informacoes lg:w-2/4 lg:m-0 p-3 pb-0 sm:p-8 custom-tab:bg-yellow-700  md:container md:m-auto md:p-0 md:px-4'>
                     <ol className='flex flex-wrap gap-1 pb-2'>
@@ -149,9 +149,9 @@ const Banner = ({ lista }) => {
                     </div>
                 </div>
 
-                <div className='banner__trailers lg:w-2/4 h-2/4 lg:h-3/4 flex flex-col items-center bg-gradient-to-t from-preto-claro md:bg-none'>
+                <div className='banner__trailers xl:h-1/2 lg:w-2/4 h-2/4 lg:h-3/4 flex flex-col items-center bg-gradient-to-t from-preto-claro md:bg-none'>
                     <Swiper
-                        className='w-full h-1/3 mt-10 sm:mt-10 lg:h-full '
+                        className='w-full h-1/3 mt-10 sm:mt-10 lg:h-full xl:mt-1 2xl:mt-10'
                         modules={[Navigation, A11y, Scrollbar, Pagination]}
                         pagination={isPaginationEnabled ? { clickable: true } : false}
                         spaceBetween={30}
@@ -181,6 +181,15 @@ const Banner = ({ lista }) => {
                                     clickable: true,
                                 },
                             },
+                            1280: {
+                                slidesPerView: 2,
+                                spaceBetween: 30,
+                                direction: 'vertical',
+                                centeredSlides: false,
+                                pagination: {
+                                    clickable: true,
+                                },
+                            },
                         }}
                     // onSlideChange={() => console.log('slide change')}
                     >
@@ -188,7 +197,7 @@ const Banner = ({ lista }) => {
                         {
                             (bannerTrailersBR?.results?.length > 0 ? bannerTrailersBR.results : bannerTrailers?.results)?.map((item, index) => (
 
-                                <SwiperSlide key={index} onClick={() => abreModal(item.key)} className={`swiper_item w-full h-full lg:max-w-52 lg:max-h-32 lg:m-auto lg:mr-10 aspect-video bg-cover bg-no-repeat bg-center relative rounded-lg overflow-clip after:content-[""] after:absolute after:top-0 after:w-full after:h-full after:block after:bg-preto-coverTrailer  cursor-pointer`} style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${midia?.listaBackgrounds[Math.floor(Math.random() * midia?.listaBackgrounds?.length)].file_path})` }}>
+                                <SwiperSlide key={index} onClick={() => abreModal(item.key)} className={`swiper_item w-full h-full lg:max-w-52 lg:max-h-32 lg:m-auto lg:mr-10 xl:max-h-32 aspect-video bg-cover bg-no-repeat bg-center relative rounded-lg overflow-clip after:content-[""] after:absolute after:top-0 after:w-full after:h-full after:block after:bg-preto-coverTrailer  cursor-pointer`} style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${midia?.listaBackgrounds[Math.floor(Math.random() * midia?.listaBackgrounds?.length)].file_path})` }}>
                                     <span className='w-full h-full flex items-center justify-center bg-preto-transparente'>
                                         <BsPlayCircleFill className='text-vermelho-claro bg-white text-4xl rounded-3xl' />
                                     </span>
@@ -197,7 +206,7 @@ const Banner = ({ lista }) => {
                         }
                     </Swiper>
 
-                    <Link to='carrousel__init' smooth={true} duration={500} className='lg:hidden'>
+                    <Link to='main__init' smooth={true} duration={500} className='lg:hidden'>
                         <MdKeyboardDoubleArrowDown className='text-white mt-10 text-5xl border-2 border-cinza-transparente rounded-full p-2 cursor-pointer  md:text-4xl ' />
                     </Link>
 

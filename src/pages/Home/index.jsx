@@ -2,8 +2,14 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
 import Banner from '../../components/Banner';
-import Carousel from '../../components/Carousel';
 import ListaDeMidias from '../../components/ListaDeMidias';
 
 const apiKey = import.meta.env.VITE_API_KEY;
@@ -62,18 +68,43 @@ const Home = () => {
         }
     }, [listaRecomendados]);
 
+    const patrocinadores = [
+        '/netflix.webp',
+        '/max.webp',
+        '/disney.webp',
+        '/crunchyroll.webp',
+        '/apple.webp',
+        '/globo.webp',
+        '/paramount.webp',
+        '/prime.webp',
+        '/telecine.webp'
+    ]
+
     return (
         <>
 
             <Banner lista={listaRecomendados} />
 
-            <section id='main__init' className='w-svw h-svh bg-preto-escuro'>
+            <section id='main__init' className='w-svw h-svh bg-preto-claro md:bg-preto-escuro'>
 
-                
-                <ListaDeMidias title={"Em ALTA"} lista={listaRecomendados}/>
-             
-                <ListaDeMidias title={"Séries"} lista={listaTrendingTv}/>
-                <ListaDeMidias title={"Filmes"} lista={listaPopulares}/>
+                <div className="container m-auto py-8">
+                    <Swiper modules={[Autoplay]} spaceBetween={30} slidesPerView={7} loop={true} autoplay={{ delay: 0, disableOnInteraction: false, pauseOnMouseEnter: true, }} speed={3000} freeMode={true}>
+                        {
+                            patrocinadores ? patrocinadores.map((logo, index) => (
+                                <SwiperSlide key={index} className='bg-preto-transparente px-4 rounded-lg overflow-hidden '>
+                                    <img src={logo} alt={`Logo ${index}`} className="logo" />
+                                </SwiperSlide>
+                            )) : null
+                        }
+                    </Swiper>
+                </div>
+
+            
+
+                <ListaDeMidias title={"Os mais comentados do momento!"} lista={listaRecomendados} />  {/*EM ALTA*/}
+
+                {/* <ListaDeMidias title={"Séries"} lista={listaTrendingTv}/>
+                <ListaDeMidias title={"Filmes"} lista={listaPopulares}/> */}
 
             </section>
 

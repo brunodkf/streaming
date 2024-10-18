@@ -45,8 +45,8 @@ export const Card = ({midia}) => {
   console.log(midiaIsolada)
 
   return (
-    <div className='cursor-pointer'>
-        <img src={midiaIsolada.poster} alt="" />
+    <div className='cursor-pointer hover:scale-105 hover:transition-all hover:duration-200 rounded-md overflow-clip' style={{ backgroundImage: `url(${midiaIsolada.poster})` }}>
+        <img src={midiaIsolada.poster} alt="Poster" />
     </div>
   )
 }

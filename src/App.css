@@ -11,15 +11,6 @@
     background: radial-gradient(circle, #282727a3 56%, rgba(0, 0, 0, 1) 100%);
 }
 
-/* .banner::before {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 100svw;
-    height: 100svh;
-    background-color: #212020A0;
-} */
-
 .banner::before {
     bottom: -1em;
     content: "";
@@ -33,4 +24,17 @@
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     z-index: 1;
+}
+
+.modal:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100svw;
+    height: 100svh;
+    /* background: #282727;
+    background: radial-gradient(circle, #28272712 56%, #000000 100%); */
+
+    background: rgb(40, 39, 39);
+    background: radial-gradient(circle, #2827277e 56%, rgba(0, 0, 0, 0.801) 100%);
 }

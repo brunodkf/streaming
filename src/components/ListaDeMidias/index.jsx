@@ -3,8 +3,8 @@ import Carousel from '../Carousel'
 
 const ListaDeMidias = ({lista, title}) => {
     return (
-        <div className=' bg-preto-escuro'>
-            <p className='text-white'>{title}</p>
+        <div className='container m-auto px-2 py-6'>
+            <h2 className='text-white font-inter text-xl'>{title}</h2>
             <Carousel lista={lista} />
         </div>
     )

@@ -13,6 +13,7 @@ const Carousel = ({ lista }) => {
     return (
         <>
             <Swiper
+                className='lg:py-5'
                 modules={[Navigation, A11y, Scrollbar, Pagination]}
                 spaceBetween={20}
                 slidesPerView={2}
@@ -38,7 +39,7 @@ const Carousel = ({ lista }) => {
                 {
                     lista?.length > 0 && lista.map((item) =>
                         <SwiperSlide key={item.id}>
-                            <Card midia={item}/>
+                            <Card midia={item} />
                         </SwiperSlide>
                     )
                 }
