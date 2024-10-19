@@ -5,9 +5,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App.jsx';
 import Home from './pages/Home';
 import Movie from './pages/Movie';
+import Destaque from './pages/Destaque';
 import Search from './pages/Search';
 
 import './index.css'
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -16,6 +18,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route element={<App />}>
           <Route path='/' element={<Home />} />
           <Route path='movie' element={<Movie />} />
+          <Route path='destaque' element={<Destaque />} />
           <Route path='search' element={<Search />} />
         </Route>
       </Routes>

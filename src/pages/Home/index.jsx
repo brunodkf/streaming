@@ -101,7 +101,7 @@ const Home = () => {
 
             
 
-                <ListaDeMidias title={"Os mais comentados do momento!"} lista={listaRecomendados} />  {/*EM ALTA*/}
+                <ListaDeMidias title={"Os Mais Populares!"} lista={listaRecomendados} />  {/*EM ALTA*/}
 
                 {/* <ListaDeMidias title={"Séries"} lista={listaTrendingTv}/>
                 <ListaDeMidias title={"Filmes"} lista={listaPopulares}/> */}

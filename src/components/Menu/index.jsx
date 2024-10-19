@@ -22,7 +22,7 @@ const Menu = () => {
                         </Link>
                     </li>
                     <li>
-                        <Link to='/' smooth={true} duration={500}>
+                        <Link to='/'>
                             <GiWolfHowl className='text-white text-2xl' />
                         </Link>
                     </li>

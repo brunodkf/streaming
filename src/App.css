@@ -38,3 +38,16 @@
     background: rgb(40, 39, 39);
     background: radial-gradient(circle, #2827277e 56%, rgba(0, 0, 0, 0.801) 100%);
 }
+.destaque:after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    width: 100svw;
+    height: 100svh;
+    /* background: #282727;
+    background: radial-gradient(circle, #28272712 56%, #000000 100%); */
+
+    background: rgb(40, 39, 39);
+    background: radial-gradient(circle, #282727ad 56%, rgba(0, 0, 0, 0.801) 100%);
+}

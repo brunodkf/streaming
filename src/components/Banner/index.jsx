@@ -107,7 +107,7 @@ const Banner = ({ lista }) => {
     return (
         <section id='banner' className="banner w-svw h-svh relative bg-cover bg-no-repeat bg-center flex items-end overflow-clip" style={{ backgroundImage: `url(${midia.background})` }}>
             <div className="banner__container lg:container w-full h-3/4 flex flex-col justify-end lg:h-full lg:flex-row lg:justify-normal lg:items-center lg:px-8 md:justify-center relative mx-auto z-10 bg-gradient-to-t from-10% from-preto-claro md:from-preto-escuro lg:bg-none">
-                <div className='banner__informacoes lg:w-2/4 lg:m-0 p-3 pb-0 sm:p-8 custom-tab:bg-yellow-700  md:container md:m-auto md:p-0 md:px-4'>
+                <div className='banner__informacoes lg:w-2/4 lg:m-0 p-3 pb-0 sm:p-8   md:container md:m-auto md:p-0 md:px-4'>
                     <ol className='flex flex-wrap gap-1 pb-2'>
                         {
                             midia ? midia.genero?.map((item, index) => (
@@ -206,7 +206,7 @@ const Banner = ({ lista }) => {
                         }
                     </Swiper>
 
-                    <Link to='main__init' smooth={true} duration={500} className='lg:hidden'>
+                    <Link to='main__init' smooth='true' duration={500} className='lg:hidden'>
                         <MdKeyboardDoubleArrowDown className='text-white mt-10 text-5xl border-2 border-cinza-transparente rounded-full p-2 cursor-pointer  md:text-4xl ' />
                     </Link>
 
@@ -214,7 +214,7 @@ const Banner = ({ lista }) => {
             </div>
 
             <div className="hidden w-full bottom-6 absolute z-50 lg:block">
-                <Link to='main__init' smooth={true} duration={500} className='block w-10 m-auto'>
+                <Link to='main__init' smooth='true' duration={500} className='block w-10 m-auto'>
                     <MdKeyboardDoubleArrowDown className='text-white text-5xl border-2 border-cinza-transparente rounded-full p-2 cursor-pointer  md:text-4xl ' />
                 </Link>
             </div>
