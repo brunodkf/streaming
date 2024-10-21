@@ -115,7 +115,6 @@ const Home = () => {
 
                 <ListaDeMidias title={"Os Mais Populares!"} lista={listaRecomendados} />  {/*EM ALTA*/}
 
-
                 <div className='container m-auto px-2 py-10'>
                     <h2 className='text-white font-inter text-xl font-semibold tracking-wider'>Os Mais Votados!</h2>
                     <Swiper modules={[Navigation, A11y, Scrollbar, Pagination]} spaceBetween={30} slidesPerView={4} loop={true} className='mt-4' >
