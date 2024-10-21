@@ -48,15 +48,14 @@ export const Card = ({ midia, ordenado, index }) => {
             <Link to={'/destaque'} state={{ midia: midiaIsolada }}>
                 <div className='w-full flex items-center gap-1 px-2 cursor-pointer min-h-20 hover:scale-105 hover:transition-all hover:duration-200 rounded-md overflow-clip text-white '>
 
-                    <p className='text-3xl sm:text-5xl sm:pr-2 font-gothamBold '>{index + 1}</p>
+                    <p className='text-5xl pr-2 font-gothamBold '>{index + 1}</p>
 
                     <img className='w-2/5 max-h-40 sm:min-h-40 rounded-xl' src={midiaIsolada.poster} alt="Poster" />
 
-                    <span className=' w-3/5 min-h-32 pl-1 flex flex-col justify-evenly'>
+                    <span className='flex flex-col justify-evenly w-3/5 min-h-32 pl-1 '>
                         <p className='text-base'> {midiaIsolada.titulo || midiaIsolada.nome}</p>
-                        <p className='hidden sm:block text-sm opacity-40'>{`${midiaIsolada?.genero[0]?.name} | ${midiaIsolada?.genero[1]?.name}`}</p>
+                        <p className='text-sm opacity-40'>{`${midiaIsolada?.genero[0]?.name} | ${midiaIsolada?.genero[1]?.name}`}</p>
                         <p className=' text-sm'>⭐ {midiaIsolada.nota}</p>
-               
                     </span>
                 </div>
             </Link>
