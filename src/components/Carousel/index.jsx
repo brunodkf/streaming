@@ -8,7 +8,7 @@ import 'swiper/css/scrollbar';
 
 import { Card } from '../Card';
 
-const Carousel = ({ lista }) => {
+const Carousel = ({ lista, ordenado }) => {
 
     return (
         <>
@@ -39,7 +39,7 @@ const Carousel = ({ lista }) => {
                 {
                     lista?.length > 0 && lista.map((item) =>
                         <SwiperSlide key={item.id}>
-                            <Card midia={item} />
+                            <Card midia={item} ordenado={ordenado}/>
                         </SwiperSlide>
                     )
                 }

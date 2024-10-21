@@ -6,12 +6,12 @@ const Destaque = () => {
     const location = useLocation();
     const { midia } = location.state || {};
 
-    console.log(midia)
-
     const formatDate = (dateString) => {
         const date = new Date(dateString);
         return date.getFullYear();
     };
+
+    // console.log(midia)
 
     return (
         <>
