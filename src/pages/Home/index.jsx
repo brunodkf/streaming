@@ -99,7 +99,10 @@ const Home = () => {
             <section id='main__init' className='w-svw  bg-preto-claro md:bg-preto-escuro'>
 
                 <div className="container m-auto py-8">
-                    <Swiper modules={[Autoplay]} spaceBetween={30} slidesPerView={7} loop={true} autoplay={{ delay: 0, disableOnInteraction: false, pauseOnMouseEnter: true, }} speed={3000} freeMode={true}>
+                    <Swiper modules={[Autoplay]} spaceBetween={30} slidesPerView={3} loop={true} autoplay={{ delay: 0, disableOnInteraction: false, pauseOnMouseEnter: true, }} speed={3000} freeMode={true}
+                     breakpoints={{ 640: { slidesPerView: 4, spaceBetween: 30,},
+                                    768: { slidesPerView: 4, spaceBetween: 40,},
+                                    1024:{ slidesPerView: 7, spaceBetween: 30,}, }}>
                         {
                             patrocinadores ? patrocinadores.map((logo, index) => (
                                 <SwiperSlide key={index} className='bg-preto-transparente px-4 rounded-lg overflow-hidden '>
@@ -126,12 +129,12 @@ const Home = () => {
                     </Swiper>
                 </div>
 
-                <ListaDeMidias title={"Séries"} lista={listaTrendingTv} />
 
                 <ListaDeMidias title={"Filmes"} lista={listaPopulares} />
 
 
 
+                <ListaDeMidias title={"Séries"} lista={listaTrendingTv} />
 
             </section>
 
