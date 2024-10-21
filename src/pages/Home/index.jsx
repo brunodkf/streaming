@@ -115,9 +115,12 @@ const Home = () => {
 
                 <ListaDeMidias title={"Os Mais Populares!"} lista={listaRecomendados} />  {/*EM ALTA*/}
 
-                <div className='container m-auto px-2 py-10'>
+                <div className='container m-auto px-2 pt-10 sm:pt-0 sm:py-10'>
                     <h2 className='text-white font-inter text-xl font-semibold tracking-wider'>Os Mais Votados!</h2>
-                    <Swiper modules={[Navigation, A11y, Scrollbar, Pagination]} spaceBetween={30} slidesPerView={4} loop={true} className='mt-4' >
+                    <Swiper modules={[Navigation, A11y, Scrollbar, Pagination]} spaceBetween={20} slidesPerView={2} loop={true} className='mt-4' 
+                        breakpoints={{ 640: { slidesPerView: 4, spaceBetween: 30,},
+                        768: { slidesPerView: 4, spaceBetween: 40,},
+                        1024:{ slidesPerView: 7, spaceBetween: 30,}, }}>
                         {
                             listaFilmesMaisVotados ? listaFilmesMaisVotados.map((item, index) => (
                                 <SwiperSlide key={item.id} className='rounded-lg overflow-hidden'>
