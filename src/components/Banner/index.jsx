@@ -1,7 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
-import { Link } from 'react-scroll';
-import ReactPlayer from 'react-player';
+import { Link } from 'react-router-dom';
 
 import axios from 'axios';
 
@@ -19,6 +18,7 @@ import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 import { isolarMidia } from '../../services/utils';
 
 import Modal from '../Modal';
+import { Scroll } from '../Scroll';
 
 const apiKey = import.meta.env.VITE_API_KEY;
 const chamadaApi = import.meta.env.VITE_API;
@@ -137,14 +137,21 @@ const Banner = ({ lista }) => {
                     <h1 className='font-bold text-white'>{midia.titulo ? midia.titulo : midia.nome}</h1>
 
                     <div className='flex gap-4 text-white pt-3'>
+
                         <button className='bg-cinza-transparente p-1 px-3 text-lg rounded-md md:text-base md:px-2' >
-                            Sinopse
+                            <Link to={'/destaque'} state={{ midia: midia }}>
+                                Sinopse
+                            </Link>
                         </button>
+
                         <button className='bg-vermelho-escuro p-1 px-3 text-lg rounded-md md:text-base md:px-2'>
                             <FaPlus />
                         </button>
+
                         <button className='bg-vermelho-escuro p-1 px-3 text-lg rounded-md md:text-base md:px-2'>
-                            <BiInfoCircle />
+                            <Link to={'/destaque'} state={{ midia: midia }}>
+                                <BiInfoCircle />
+                            </Link>
                         </button>
                     </div>
                 </div>
@@ -205,17 +212,20 @@ const Banner = ({ lista }) => {
                         }
                     </Swiper>
 
-                    <Link to='main__init' smooth='true' duration={500} className='lg:hidden'>
-                        <MdKeyboardDoubleArrowDown className='text-white mt-10 text-5xl border-2 border-cinza-transparente rounded-full p-2 cursor-pointer  md:text-4xl ' />
-                    </Link>
+                    <div className="lg:hidden">
+                        <Scroll to={'main__init'} smooth={true} duration={500}>
+                            <MdKeyboardDoubleArrowDown className='text-white mt-10 text-5xl border-2 border-cinza-transparente rounded-full p-2 cursor-pointer  md:text-4xl ' />
+                        </Scroll>
+                    </div>
+
 
                 </div>
             </div>
 
             <div className="hidden w-full bottom-6 absolute z-50 lg:block">
-                <Link to='main__init' smooth='true' duration={500} className='block w-10 m-auto'>
-                    <MdKeyboardDoubleArrowDown className='text-white text-5xl border-2 border-cinza-transparente rounded-full p-2 cursor-pointer  md:text-4xl ' />
-                </Link>
+                <Scroll to={'main__init'} smooth={true} duration={500}>
+                    <MdKeyboardDoubleArrowDown className='text-white mt-10 text-5xl border-2 border-cinza-transparente rounded-full p-2 cursor-pointer  md:text-4xl ' />
+                </Scroll>
             </div>
 
 

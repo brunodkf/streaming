@@ -27,6 +27,6 @@ export const isolarMidia = (midia, infoImagens, infoMidia) => {
         sinopse: midia.overview,
         titulo: midia.title,
         nome: midia.name,
-        estreia: midia.release_date
+        estreia: midia.release_date || midia.first_air_date
     }
 }

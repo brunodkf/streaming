@@ -43,6 +43,12 @@ export const Card = ({ midia, ordenado, index }) => {
 
     const midiaIsolada = isolarMidia(midia, infoImagens, infoMidia);
 
+    const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        return date.getFullYear();
+    };
+
+
     if (ordenado) {
         return (
             <Link to={'/destaque'} state={{ midia: midiaIsolada }}>
@@ -50,11 +56,12 @@ export const Card = ({ midia, ordenado, index }) => {
 
                     <p className='text-5xl pr-2 font-gothamBold '>{index + 1}</p>
 
-                    <img className='w-2/5 max-h-40 sm:min-h-40 rounded-xl' src={midiaIsolada.poster} alt="Poster" />
+                    <img className='w-2/5 max-h-40 sm:min-h-32 rounded-xl' src={midiaIsolada.poster} alt="Poster" />
 
                     <span className='flex flex-col justify-evenly w-3/5 min-h-32 pl-1 '>
-                        <p className='text-base'> {midiaIsolada.titulo || midiaIsolada.nome}</p>
-                        <p className='text-sm opacity-40'>{`${midiaIsolada?.genero[0]?.name} | ${midiaIsolada?.genero[1]?.name}`}</p>
+                        <p className='sm:hidden text-sm opacity-40'>{`${midiaIsolada?.genero[0]?.name} | ${midiaIsolada?.genero[1]?.name}`}</p>
+                        <p className='hidden sm:block text-sm opacity-40'>{`${midiaIsolada?.genero[0]?.name} `}</p>
+                        <p className='text-base'>{formatDate(midiaIsolada.estreia)}</p>
                         <p className=' text-sm'>⭐ {midiaIsolada.nota}</p>
                     </span>
                 </div>
@@ -63,15 +70,12 @@ export const Card = ({ midia, ordenado, index }) => {
     } else {
         return (
             <Link to={'/destaque'} state={{ midia: midiaIsolada }}>
-                <div className='cursor-pointer hover:scale-105 hover:transition-all hover:duration-200 rounded-md overflow-clip text-white' style={{ backgroundImage: `url(${midiaIsolada.poster})` }}>
+                <div className='cursor-pointer hover:scale-105 hover:transition-all hover:duration-200 rounded-md overflow-clip text-white'>
                     <img src={midiaIsolada.poster} alt="Poster" />
 
-                    <span className='w-full absolute flex items-center'>
+                    <span className='w-full flex items-center justify-between px-1 pt-2'>
+                        <p className='text-sm opacity-40'>{formatDate(midiaIsolada.estreia)}</p>
                         <p className=' text-sm'> ⭐ {midiaIsolada.nota}</p>
-
-                        <p className=' ml-1 opacity-40'>|</p>
-
-                        <p className=' text-xs ml-1 opacity-40'>{`${midiaIsolada?.genero[0]?.name}`}</p>
                     </span>
                 </div>
             </Link>
