@@ -16,7 +16,7 @@ const Carousel = ({ lista, ordenado }) => {
                 className='lg:py-5'
                 modules={[Navigation, A11y, Scrollbar, Pagination]}
                 spaceBetween={20}
-                slidesPerView={2}
+                slidesPerView={3}
                 centeredSlides={false}
                 breakpoints={{
                     640: {

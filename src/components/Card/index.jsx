@@ -70,7 +70,7 @@ export const Card = ({ midia, ordenado, index }) => {
     } else {
         return (
             <Link to={'/destaque'} state={{ midia: midiaIsolada }}>
-                <div className='cursor-pointer hover:scale-105 hover:transition-all hover:duration-200 rounded-md overflow-clip text-white'>
+                <div className='max-w-40 md:max-w-none cursor-pointer hover:scale-105 hover:transition-all hover:duration-200 rounded-md overflow-clip text-white'>
                     <img src={midiaIsolada.poster} alt="Poster" />
 
                     <span className='w-full flex items-center justify-between px-1 pt-2'>
