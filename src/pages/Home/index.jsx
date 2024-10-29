@@ -90,13 +90,11 @@ const Home = () => {
         '/prime.webp',
         '/telecine.webp'
     ];
-    
 
-    const midiaSeparada = listaTrendingTv.slice(0, 1);
-    midiaSeparada.forEach(e => {
-        const mid = isolarMidia(e);
-        console.log(mid)
-    })
+
+    const midiaSeparada = Math.floor(Math.random() * listaTrendingTv?.length);
+    const midBanner = midiaSeparada ? isolarMidia(listaTrendingTv[midiaSeparada]) : null;
+    console.log(midBanner)
 
     return (
         <>
@@ -105,7 +103,7 @@ const Home = () => {
 
             <section id='main__init' className='w-svw bg-preto-claro md:bg-preto-escuro'>
 
-                <div className="container m-auto py-8 mb-8">  {/*LISTA DAS PLATAFORMAS DE STREAMING*/}
+                <div className="plataformas container m-auto py-8 mb-8">  {/*LISTA DAS PLATAFORMAS DE STREAMING*/}
                     <Swiper modules={[Autoplay]} spaceBetween={30} slidesPerView={3} loop={true} autoplay={{ delay: 0, disableOnInteraction: false, pauseOnMouseEnter: true, }} speed={3000} freeMode={true}
                         breakpoints={{
                             640: { slidesPerView: 4, spaceBetween: 30, },
@@ -124,7 +122,7 @@ const Home = () => {
 
                 <ListaDeMidias title={"Os Mais Populares!"} lista={listaRecomendados} />  {/*EM ALTA*/}
 
-                <div className='container m-auto px-2 pt-10  '>  {/*LISTA DOS MAIS VOTADOS*/}
+                <div className='maisVotados container m-auto px-2 pt-10'>  {/*LISTA DOS MAIS VOTADOS*/}
                     <h2 className='text-white font-inter text-xl font-semibold tracking-wider'>Os Mais Votados!</h2>
                     <Swiper modules={[Navigation, A11y, Scrollbar, Pagination]} spaceBetween={20} slidesPerView={2} loop={true} className='mt-4'
                         breakpoints={{
@@ -143,19 +141,27 @@ const Home = () => {
                     </Swiper>
                 </div>
 
-                <div className='w-full flex items-center justify-center px-2 mt-8 bg-center bg-no-repeat bg-cover' style={{ backgroundImage: `url(${Family})` }}>  {/*CHAMADA*/}
-                    <div className="container m-auto bg-green-950 text-white">
-                        <div className="">
-                            <p>Separamos algo para você !</p>
-                            <h2>Sua próxima série, você encontra aqui</h2>
+                <div className='midBanner w-full min-h-60 relative flex items-center justify-center  my-10 
+                bg-center bg-no-repeat bg-cover ' style={{ backgroundImage: `url(${midBanner?.background})` }}>  {/*CHAMADA*/}
+                    <span className='bg-black px-2'>
+                        <div className="container m-auto text-white z-10 flex flex-col items-center justify-evenly py-10 ">
+                            <div className="font-inter text-center">
+                                <p className='mb-2 uppercase text-sm tracking-widest'>Separamos algo pra você</p>
+
+                                <h2 className="font-bold text-2xl  uppercase">Sua próxima série, você encontra aqui !</h2>
+                            </div>
+                            <div className="flex flex-col items-center justify-center ">
+                                <p> {midBanner?.nome}</p>
+                                <img className='max-w-60 rounded-xl' src={midBanner?.poster} alt="Poster Série do Banner Central do Site" />
+                                <p>
+                                    {
+                                        midBanner?.sinopse?.length >= 240 ? `${midBanner?.sinopse.slice(0, 180)} {...}` : `${midBanner?.sinopse}`
+                                    }
+                                </p>
+                            </div>
                         </div>
-                        <div className="">
-                          
-                        </div>
-                    </div>
+                    </span>
                 </div>
-
-
 
 
                 <ListaDeMidias title={"Filmes"} lista={listaPopulares} />  {/*FILMES EM ALTA*/}

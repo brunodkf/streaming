@@ -9,10 +9,10 @@ export const isolarMidia = (midia, infoImagens, infoMidia) => {
     const logos = [];
     const randomLogo = Math.floor(Math.random() * logos?.length);
     infoImagens ? infoImagens.logos?.filter(e => e.iso_639_1 == "pt" || e.iso_639_1 == "en").map(e => logos.push(e.file_path)) : null;
-
-
-    const listaBackgrounds = infoImagens?.backdrops?.filter(e => e.iso_639_1 == null);
+    
     const listaLogos = infoImagens?.logos?.filter(e => e.iso_639_1)
+    const listaBackgrounds = infoImagens?.backdrops?.filter(e => e.iso_639_1 == null);
+   
 
     return {
         id: midia.id,

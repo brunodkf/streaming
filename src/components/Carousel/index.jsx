@@ -20,7 +20,7 @@ const Carousel = ({ lista, ordenado }) => {
                 centeredSlides={false}
                 breakpoints={{
                     640: {
-                        slidesPerView: 2,
+                        slidesPerView: 3,
                         spaceBetween: 30,
                     },
                     768: {
