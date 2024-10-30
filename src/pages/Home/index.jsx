@@ -14,6 +14,7 @@ import { Card } from '../../components/Card';
 
 import Family from '/family.webp';
 import { isolarMidia } from '../../services/utils';
+import { Link } from 'react-router-dom';
 
 const apiKey = import.meta.env.VITE_API_KEY;
 const chamadaApi = import.meta.env.VITE_API;
@@ -142,25 +143,43 @@ const Home = () => {
                 </div>
 
                 <div className='midBanner w-full min-h-60 relative flex items-center justify-center  my-10 
-                bg-center bg-no-repeat bg-cover ' style={{ backgroundImage: `url(${midBanner?.background})` }}>  {/*CHAMADA*/}
-                    <span className='bg-black px-2'>
-                        <div className="container m-auto text-white z-10 flex flex-col items-center justify-evenly py-10 ">
-                            <div className="font-inter text-center">
-                                <p className='mb-2 uppercase text-sm tracking-widest'>Separamos algo pra você</p>
+                bg-center bg-no-repeat bg-cover before:content-[""] before:absolute before:block before:w-full before:h-full
+                before:bg-gradient-to-b before:from-preto-claro md:before:from-preto-escuro after:content-[""] after:absolute after:block after:w-full after:h-full
+                after:bg-gradient-to-t after:from-preto-claro md:after:from-preto-escuro
+                ' style={{ backgroundImage: `url(${midBanner?.background})` }}>  {/*CHAMADA*/}
 
-                                <h2 className="font-bold text-2xl  uppercase">Sua próxima série, você encontra aqui !</h2>
-                            </div>
-                            <div className="flex flex-col items-center justify-center ">
-                                <p> {midBanner?.nome}</p>
-                                <img className='max-w-60 rounded-xl' src={midBanner?.poster} alt="Poster Série do Banner Central do Site" />
-                                <p>
-                                    {
-                                        midBanner?.sinopse?.length >= 240 ? `${midBanner?.sinopse.slice(0, 180)} {...}` : `${midBanner?.sinopse}`
-                                    }
-                                </p>
-                            </div>
+                    <div className="container m-auto text-white z-10 flex flex-col items-center justify-evenly gap-10 py-10 ">
+                        <div className="font-inter text-center">
+                            <p className='mb-2 uppercase text-sm tracking-widest'>Separamos algo pra você</p>
+                            <h2 className="font-bold text-2xl  uppercase">Sua próxima série, você encontra aqui !</h2>
                         </div>
-                    </span>
+                        <div className="flex flex-col items-center justify-center ">
+                            <p className='text-xl pb-2 uppercase tracking-wide text-center'> {midBanner?.nome}</p>
+
+                            {/* <img className='max-w-60 rounded-xl' src={midBanner?.poster} alt="Poster Série do Banner Central do Site" /> */}
+
+                            <figure>
+                                <img className='max-w-60 rounded-xl' src={midBanner?.poster} alt="Poster Série do Banner Central do Site" />
+
+                                <figcaption className='flex justify-between gap-4 mt-3'>
+                                    <button className='bg-cinza-transparente p-2 rounded-lg w-1/2'>
+                                        <Link to={'/destaque'} state={{ midia: midBanner }}>
+                                            Detalhes
+                                        </Link>
+                                    </button>
+                                    <button className='bg-vermelho-escuro p-2 rounded-lg w-1/2'>
+                                        Trailer
+                                    </button>
+                                </figcaption>
+                            </figure>
+
+                            <p className='mt-4 text-center'>
+                                {
+                                    midBanner?.sinopse?.length >= 240 ? `${midBanner?.sinopse.slice(0, 180)} {...}` : `${midBanner?.sinopse}`
+                                }
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
 

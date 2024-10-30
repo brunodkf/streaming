@@ -11,7 +11,7 @@ const Destaque = () => {
         return date.getFullYear();
     };
 
-    // console.log(midia)
+    console.log(midia)
 
     return (
         <>
