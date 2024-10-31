@@ -154,7 +154,7 @@ const Home = () => {
                             <h2 className="font-bold text-2xl  uppercase">Sua próxima série, você encontra aqui !</h2>
                         </div>
                         <div className="flex flex-col items-center justify-center ">
-                            <p className='text-xl pb-2 uppercase tracking-wide text-center'> {midBanner?.nome}</p>
+                            <p className='text-xl pb-2 uppercase tracking-wide text-center font-bold'> {midBanner?.nome}</p>
 
                             {/* <img className='max-w-60 rounded-xl' src={midBanner?.poster} alt="Poster Série do Banner Central do Site" /> */}
 
@@ -173,7 +173,7 @@ const Home = () => {
                                 </figcaption>
                             </figure>
 
-                            <p className='mt-4 text-center'>
+                            <p className='mt-4 text-center px-3'>
                                 {
                                     midBanner?.sinopse?.length >= 240 ? `${midBanner?.sinopse.slice(0, 180)} {...}` : `${midBanner?.sinopse}`
                                 }
