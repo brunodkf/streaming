@@ -30,13 +30,3 @@
     z-index: 1;
 }
 
-/* .midBanner::after {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    height: 100%;
-    width: 100svw;
-    top: 0;
-    background: rgb(7, 11, 13);
-    background: linear-gradient(180deg, rgba(7, 11, 13, 1) 0%, rgba(7, 11, 13, 0.7147233893557423) 50%, rgba(7, 11, 13, 1) 100%);
-} */

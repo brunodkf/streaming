@@ -12,9 +12,9 @@ import Banner from '../../components/Banner';
 import ListaDeMidias from '../../components/ListaDeMidias';
 import { Card } from '../../components/Card';
 
-import Family from '/family.webp';
 import { isolarMidia } from '../../services/utils';
 import { Link } from 'react-router-dom';
+import Footer from '../../components/Footer';
 
 const apiKey = import.meta.env.VITE_API_KEY;
 const chamadaApi = import.meta.env.VITE_API;
@@ -102,7 +102,7 @@ const Home = () => {
 
             <Banner lista={listaPopulares} />  {/*FILMES EM ALTA*/}
 
-            <section id='main__init' className='w-svw bg-preto-claro md:bg-preto-escuro'>
+            <section id='main__init' className='w-svw bg-preto-claro md:bg-preto-escuro pb-8'>
 
                 <div className="plataformas container m-auto py-8 mb-8">  {/*LISTA DAS PLATAFORMAS DE STREAMING*/}
                     <Swiper modules={[Autoplay]} spaceBetween={30} slidesPerView={3} loop={true} autoplay={{ delay: 0, disableOnInteraction: false, pauseOnMouseEnter: true, }} speed={3000} freeMode={true}
@@ -110,6 +110,7 @@ const Home = () => {
                             640: { slidesPerView: 4, spaceBetween: 30, },
                             768: { slidesPerView: 4, spaceBetween: 40, },
                             1024: { slidesPerView: 7, spaceBetween: 30, },
+                            1280: { slidesPerView: 8, spaceBetween: 20, },
                         }}>
                         {
                             patrocinadores ? patrocinadores.map((logo, index) => (
@@ -196,8 +197,10 @@ const Home = () => {
 
                 <ListaDeMidias title={"Séries"} lista={listaTrendingTv} />  {/*SERIES EM ALTA*/}
 
-
             </section>
+
+
+            <Footer />
 
         </>
     )
