@@ -148,15 +148,24 @@ const Home = () => {
                 after:bg-gradient-to-t after:from-preto-claro md:after:from-preto-escuro
                 ' style={{ backgroundImage: `url(${midBanner?.background})` }}>  {/*CHAMADA*/}
 
-                    <div className="container m-auto text-white z-10 flex flex-col items-center justify-evenly gap-10 py-10 ">
-                        <div className="font-inter text-center">
+                    <div className="container text-white m-auto py-10 z-10 flex flex-col items-center justify-evenly md:flex-row gap-10  ">
+                        <div className="font-inter text-center md:w-1/2">
                             <p className='mb-2 uppercase text-sm tracking-widest'>Separamos algo pra você</p>
                             <h2 className="font-bold text-2xl  uppercase">Sua próxima série, você encontra aqui !</h2>
                         </div>
-                        <div className="flex flex-col items-center justify-center ">
-                            <p className='text-xl pb-2 uppercase tracking-wide text-center font-bold'> {midBanner?.nome}</p>
 
-                            {/* <img className='max-w-60 rounded-xl' src={midBanner?.poster} alt="Poster Série do Banner Central do Site" /> */}
+                        <div className="flex flex-col items-center justify-center md:w-1/2  md:flex-row-reverse md:justify-end">
+                            <div className="block md:hidden lg:block lg:px-4">
+                                <p className='text-xl pb-2 uppercase tracking-wide text-center font-bold'> {midBanner?.nome}</p>
+
+                                <span className='hidden lg:block w-full h-px bg-blue-50'></span>
+
+                                <p className='mt-4 px-3 hidden lg:block'>
+                                    {
+                                        midBanner?.sinopse?.length >= 240 ? `${midBanner?.sinopse.slice(0, 180)} {...}` : `${midBanner?.sinopse}`
+                                    }
+                                </p>
+                            </div>
 
                             <figure>
                                 <img className='max-w-60 rounded-xl' src={midBanner?.poster} alt="Poster Série do Banner Central do Site" />
@@ -173,7 +182,7 @@ const Home = () => {
                                 </figcaption>
                             </figure>
 
-                            <p className='mt-4 text-center px-3'>
+                            <p className='mt-4 text-center px-3 md:hidden'>
                                 {
                                     midBanner?.sinopse?.length >= 240 ? `${midBanner?.sinopse.slice(0, 180)} {...}` : `${midBanner?.sinopse}`
                                 }
