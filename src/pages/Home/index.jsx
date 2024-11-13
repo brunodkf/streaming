@@ -95,7 +95,6 @@ const Home = () => {
 
     const midiaSeparada = Math.floor(Math.random() * listaTrendingTv?.length);
     const midBanner = midiaSeparada ? isolarMidia(listaTrendingTv[midiaSeparada]) : null;
-    console.log(midBanner)
 
     return (
         <>
