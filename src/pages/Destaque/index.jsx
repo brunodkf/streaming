@@ -69,13 +69,13 @@ const Destaque = () => {
                     <div className="">
                         {
                             listaBR ? listaBR?.flatrate?.filter((item, index) => index === 0).map((item, index) =>
-                                <div key={index} className="w-2/3 m-auto rounded-lg p-2 bg-preto-escuro mt-2 flex items-center  gap-2">
+                                <div key={index} className="w-3/4 m-auto rounded-lg p-2 bg-preto-escuro mt-2 flex items-center  gap-2">
                                     <img className="max-w-16 rounded-md" src={`https://image.tmdb.org/t/p/original/${item.logo_path}`} alt="" />
                                     <p className="text-white font-gotham">{`Disponivel agora na ${item.provider_name}`}</p>
                                 </div>
                             ) : listaBR?.rest?.filter((item, index) => index === 0).map((item, index) =>
-                                <span key={index}>
-                                    <img src={`https://image.tmdb.org/t/p/original/${item.logo_path}`} alt="" />
+                                <span key={index} className="w-3/4 m-auto rounded-lg p-2 bg-preto-escuro mt-2 flex items-center  gap-2">
+                                    <img  className="max-w-16 rounded-md" src={`https://image.tmdb.org/t/p/original/${item.logo_path}`} alt="" />
                                     <p className="text-white font-gotham">{`Disponivel agora na ${item.provider_name}`}</p>
                                 </span>
                             )
