@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin');
+
 export default {
   content: [
     "./index.html",
@@ -24,8 +26,8 @@ export default {
           transparente: '#6d7c837c'
         }
       },
-      screens:{
-        'custom-tab': {'raw': '(max-width: 1100px) and (min-height: 1000px)'},
+      screens: {
+        'custom-tab': { 'raw': '(max-width: 1100px) and (min-height: 1000px)' },
       },
       fontFamily: {
         inter: ["Inter", "sans-serif"],
@@ -34,5 +36,28 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      const newUtilities = {
+        '.mod-overlay': {
+          position: 'relative',
+        },
+
+        '.mod-overlay::after': {
+          content: '""',
+          position: 'absolute',
+          display: 'block',
+          width: '100%',
+          height: '100%',
+          background: 'rgb(40,39,39)',
+          background: 'radial-gradient(circle, #282727a3 56%, rgba(0, 0, 0, 1) 100%)',
+        },
+
+
+
+
+      };
+      addUtilities(newUtilities, ['before']);
+    }),
+  ],
 }

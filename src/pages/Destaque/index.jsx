@@ -44,7 +44,10 @@ const Destaque = () => {
 
     return (
         <>
-            <section className='destaque w-svw h-svh bg-center bg-cover bg-no-repeat flex flex-col items-center justify-center' style={{ backgroundImage: `url(${midia.background})` }}>
+            <section className='destaque w-svw h-svh relative bg-center bg-cover bg-no-repeat flex flex-col items-center justify-center
+            ' style={{ backgroundImage: `url(${midia.background})` }}>
+
+                <div className="absolute w-full h-80 bg-gradient-to-t from-10% from-preto-claro md:from-preto-escuro bottom-0 z-20 "></div>
 
                 <div className="w-full container z-50 flex flex-col items-center justify-between gap-2 font-inter px-2">
                     <h1 className="text-white text-2xl text-center tracking-wider">{`${midia.titulo || midia.nome} (${formatDate(midia.estreia)}) `}</h1>
@@ -75,15 +78,19 @@ const Destaque = () => {
                                 </div>
                             ) : listaBR?.rest?.filter((item, index) => index === 0).map((item, index) =>
                                 <span key={index} className="w-3/4 m-auto rounded-lg p-2 bg-preto-escuro mt-2 flex items-center  gap-2">
-                                    <img  className="max-w-16 rounded-md" src={`https://image.tmdb.org/t/p/original/${item.logo_path}`} alt="" />
+                                    <img className="max-w-16 rounded-md" src={`https://image.tmdb.org/t/p/original/${item.logo_path}`} alt="" />
                                     <p className="text-white font-gotham">{`Disponivel agora na ${item.provider_name}`}</p>
                                 </span>
                             )
                         }
                     </div>
                 </div>
+
             </section>
-            <section id='main__init' className='w-svw h-svh bg-preto-claro md:bg-preto-escuro'></section>
+
+            <section id='main__init' className='w-svw h-svh bg-preto-claro md:bg-preto-escuro'>
+
+            </section>
         </>
     )
 }

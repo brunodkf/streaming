@@ -10,12 +10,8 @@
     background: radial-gradient(circle, #282727a3 56%, rgba(0, 0, 0, 1) 100%);
 }
 
-.destaque:after {
-    top: 0;
-    background: radial-gradient(circle, #282727ad 56%, rgba(0, 0, 0, 0.801) 100%);
-}
 
-.banner::before {
+/* .banner::before{
     bottom: -1em;
     content: "";
     display: inline-block;
@@ -28,5 +24,7 @@
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     z-index: 1;
-}
+} */
+
+
 

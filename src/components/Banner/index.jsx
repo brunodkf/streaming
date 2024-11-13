@@ -106,7 +106,11 @@ const Banner = ({ lista }) => {
 
     return (
         <section id='banner' className="banner w-svw h-svh relative bg-cover bg-no-repeat bg-center flex items-end overflow-clip" style={{ backgroundImage: `url(${midia.background})` }}>
-            <div className="banner__container lg:container w-full h-3/4 flex flex-col justify-end lg:h-full lg:flex-row lg:justify-normal lg:items-center lg:px-8 md:justify-center relative mx-auto z-10 bg-gradient-to-t from-10% from-preto-claro md:from-preto-escuro lg:bg-none">
+         
+            <div className="banner__container lg:container w-full h-3/4 flex flex-col justify-end
+             lg:h-full lg:flex-row lg:justify-normal lg:items-center lg:px-8 md:justify-center relative mx-auto z-10 
+             bg-gradient-to-t from-10% from-preto-claro md:from-preto-escuro lg:bg-none">
+                
                 <div className='banner__informacoes lg:w-2/4 lg:m-0 p-3 pb-0 sm:p-8   md:container md:m-auto md:p-0 md:px-4'>
                     <ol className='flex flex-wrap gap-1 pb-2'>
                         {
