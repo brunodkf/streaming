@@ -25,7 +25,7 @@ const Home = () => {
     const [trendingTv, setTrendingTv] = useState([]) // SERIES EM ALTA
     const [listRecomendados, setListRecomendados] = useState([]); //EM ALTA
 
-    const [listFilmesMaisVotados, setListFilmesMaisVotados] = useState([]); //EM ALTA
+    const [listFilmesMaisVotados, setListFilmesMaisVotados] = useState([]); //EM ALTA MAIS VOTADOS
 
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);

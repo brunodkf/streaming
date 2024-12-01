@@ -1,6 +1,5 @@
 .banner:after,
-.modal:after,
-.destaque:after {
+.modal:after {
     content: '';
     position: absolute;
     display: block;
@@ -10,8 +9,18 @@
     background: radial-gradient(circle, #282727a3 56%, rgba(0, 0, 0, 1) 100%);
 }
 
+.destaque:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100svw;
+    height: 100%;
+    top: 0;
+    background: rgb(40, 39, 39);
+    background: radial-gradient(circle, #282727a3 56%, rgba(0, 0, 0, 1) 100%);
+}
 
-/* .banner::before{
+.banner::before{
     bottom: -1em;
     content: "";
     display: inline-block;
@@ -24,7 +33,7 @@
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     z-index: 1;
-} */
+}
 
 
 
