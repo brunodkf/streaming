@@ -10,7 +10,7 @@ import { FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <section id='footer' className='footer w-screen h-screen md:h-auto bg-preto-claro md:bg-preto-escuro border-t-2 border-t-cinza-escuro'>
+        <section id='footer' className='footer w-full h-screen md:h-auto bg-preto-claro md:bg-preto-escuro border-t-2 border-t-cinza-escuro'>
             <div className="container h-4/5 md:h-auto m-auto">
                 <img className='w-20 m-auto mt-12' src={LogoBranco} alt="Logo Movie" />
 
