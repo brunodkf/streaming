@@ -50,5 +50,10 @@ body {
     /* Tamanho maior para destacar */
 }
 
+.swiperDestaque .swiper-pagination{
+    position: relative;
+    margin-top: 1.5em;
+}
+
 
 @tailwind utilities;

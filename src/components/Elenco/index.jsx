@@ -12,7 +12,6 @@ export const Elenco = ({ lista }) => {
 
 
     const casting = lista?.cast
-    console.log(casting)
 
     return (
         <>

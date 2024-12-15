@@ -3,6 +3,18 @@ import { useLocation } from "react-router-dom";
 import { IoMdShare } from "react-icons/io";
 import { Elenco } from "../../components/Elenco";
 
+import { BsPlayCircleFill } from "react-icons/bs";
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import Modal from "../../components/Modal";
+import { useState } from "react";
+import Footer from "../../components/Footer";
+
 const urlImagens = import.meta.env.VITE_API_IMAGENS;
 
 const Destaque = () => {
@@ -16,10 +28,22 @@ const Destaque = () => {
     };
 
 
+    console.log(midia.trailersBR)
+
+    const [openModal, setOpenModal] = useState(false);  //controla o estado do modal
+    const [videoModal, setVideoModal] = useState(null);
+
+    function abreModal(e) {
+        setOpenModal(true)
+        setVideoModal(e);
+    }
+    function closeModal() {
+        setOpenModal(false);
+    }
 
     return (
         <>
-            <section className='destaque w-full min-h-svh relative bg-center bg-cover bg-no-repeat flex flex-col items-center justify-center 
+            <section className='destaque w-full min-h-svh relative overflow-clip bg-center bg-cover bg-no-repeat flex flex-col items-center justify-center 
             ' style={{ backgroundImage: `url(${midia.background})` }}>
 
                 <div className="absolute w-full h-80 bg-gradient-to-t from-10% from-preto-claro md:from-preto-escuro bottom-0 z-20 "></div>
@@ -83,8 +107,8 @@ const Destaque = () => {
                         <div className="flex flex-col p-4">
                             <h1 className="text-white text-2xl tracking-wider">Elenco Principal</h1>
                             <span className="w-full container h-px text-white bg-white mt-2 mb-6 opacity-10"></span>
-                       
-                            <Elenco lista={midia.creditos}/>
+
+                            <Elenco lista={midia.creditos} />
                         </div>
 
 
@@ -96,9 +120,59 @@ const Destaque = () => {
 
             </section>
 
-            <section id='main__init' className='w-svw h-svh bg-preto-claro md:bg-preto-escuro'>
+            <section id='main__init' className='w-full h-auto relative bg-preto-claro md:bg-preto-escuro'>
 
+                <div className="container m-auto flex flex-col p-4">
+                    <h1 className="text-white text-2xl tracking-wider">Confira os trailers</h1>
+                    <span className="w-full container h-px text-white bg-white mt-2 mb-6 opacity-10"></span>
+
+                    <Swiper
+                        className='swiperDestaque w-full'
+                        modules={[Navigation, A11y, Scrollbar, Pagination]}
+                        pagination={{ clickable: true }}
+                        // spaceBetween={20}
+                        // slidesPerView={1}
+                        centeredSlides={false}
+                        breakpoints={{
+                            640: {
+                                slidesPerView: 2,
+                                spaceBetween: 30,
+                            },
+                            768: {
+                                slidesPerView: 3,
+                                spaceBetween: 30,
+                            },
+                            1024: {
+                                slidesPerView: 5,
+                                spaceBetween: 30,
+                            },
+                        }}
+                    >
+
+                        {
+                            (midia.trailersBR.length > 0 ? midia.trailersBR : midia.trailers)?.map((item, index) => (
+                                <SwiperSlide key={index} onClick={() => abreModal(item.key)} className={`swiper_item w-full h-full lg:max-w-52 lg:max-h-32 lg:m-auto lg:mr-10 
+                                    xl:max-h-32 aspect-video bg-cover bg-no-repeat bg-center relative rounded-lg overflow-clip
+                                     after:content-[""] after:absolute after:top-0 after:w-full after:h-full after:block after:bg-preto-coverTrailer cursor-pointer`}
+
+                                    style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${midia?.listaBackgrounds[Math.floor(Math.random() * midia?.listaBackgrounds?.length)].file_path})` }}>
+
+                                    <span className='w-full h-full flex items-center justify-center bg-preto-transparente'>
+                                        <BsPlayCircleFill className='text-vermelho-claro bg-white text-4xl rounded-3xl' />
+                                    </span>
+
+                                </SwiperSlide>
+                            ))
+                        }
+                    </Swiper>
+                </div>
+
+
+
+                <Modal isOpen={openModal} background={midia.background} closeModal={closeModal} trailer={videoModal} />
             </section>
+
+            <Footer/>
         </>
     )
 }
