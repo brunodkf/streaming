@@ -30,7 +30,7 @@ export const useMediaDetails = (midia) => {
                         axios.get(`${chamadaApi}/${midia.media_type}/${midia.id}/videos?language=pt-BR&${apiKey}`),
                         axios.get(`${chamadaApi}/${midia.media_type}/${midia.id}/images?${apiKey}`),
                         axios.get(`${chamadaApi}/${midia.media_type}/${midia?.id}/watch/providers?${apiKey}`),
-                        axios.get(`${chamadaApi}/${midia.media_type}/${midia?.id}/similar?${apiKey}&language=pt-BR&page=1`),
+                        axios.get(`${chamadaApi}/${midia.media_type}/${midia?.id}/recommendations?${apiKey}&language=pt-BR&page=1`),
                         axios.get(`${chamadaApi}/${midia.media_type}/${midia?.id}/credits?${apiKey}&language=pt-BR&page=1`),                    
                     ]);
 

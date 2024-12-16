@@ -10,11 +10,13 @@ import { FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <section id='footer' className='footer w-full h-screen md:h-auto bg-preto-claro md:bg-preto-escuro border-t-2 border-t-cinza-escuro'>
-            <div className="container h-4/5 md:h-auto m-auto">
-                <img className='w-20 m-auto mt-12' src={LogoBranco} alt="Logo Movie" />
+        <section id='footer' className='footer w-full h-screen flex md:h-auto bg-preto-claro md:bg-preto-escuro '>
 
-                <ul className=' w-full h-2/4 md:max-w-96 md:h-auto flex flex-col md:flex-row justify-between mt-10 md:m-auto md:mt-10 py-4 text-center uppercase text-white tracking-wider mr-10 '>
+            <div className="container h-4/5 md:h-auto m-auto md:pt-10">
+
+                <img className='w-20 m-auto' src={LogoBranco} alt="Logo Movie" />
+
+                <ul className='w-full h-2/4 md:max-w-96 md:h-auto flex flex-col md:flex-row justify-between mt-10 md:m-auto md:mt-10 py-4 text-center uppercase text-white tracking-wider mr-10 '>
                     <li>
                         <Scroll to='/'>
                             Início

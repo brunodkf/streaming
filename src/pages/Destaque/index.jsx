@@ -14,6 +14,7 @@ import 'swiper/css/scrollbar';
 import Modal from "../../components/Modal";
 import { useState } from "react";
 import Footer from "../../components/Footer";
+import ListaDeMidias from "../../components/ListaDeMidias";
 
 const urlImagens = import.meta.env.VITE_API_IMAGENS;
 
@@ -28,7 +29,7 @@ const Destaque = () => {
     };
 
 
-    console.log(midia.trailersBR)
+    console.log(midia)
 
     const [openModal, setOpenModal] = useState(false);  //controla o estado do modal
     const [videoModal, setVideoModal] = useState(null);
@@ -165,6 +166,10 @@ const Destaque = () => {
                             ))
                         }
                     </Swiper>
+                </div>
+
+                <div className="container m-auto flex flex-col p-4">
+                    <ListaDeMidias title={"Você também pode gostar!"} lista={midia.similares} />
                 </div>
 
 
