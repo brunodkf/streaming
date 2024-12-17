@@ -1,5 +1,6 @@
 .banner:after,
-.modal:after {
+.modal:after
+{
     content: '';
     position: absolute;
     display: block;
