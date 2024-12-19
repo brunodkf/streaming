@@ -193,7 +193,7 @@ const Banner = () => {
                 </div>
             </div>
 
-            <div className="hidden w-full bottom-6 absolute z-50 lg:flex">
+            <div className="hidden w-full bottom-7 absolute z-50 lg:flex">
                 <Scroll to={'main__init'} smooth={true} duration={500}>
                     <MdKeyboardDoubleArrowDown className='text-white mt-10 text-5xl border-2 border-cinza-transparente rounded-full p-2 cursor-pointer md:text-4xl ' />
                 </Scroll>
