@@ -3,6 +3,8 @@ import { Card } from '../Card'
 
 const ListaDeBusca = ({ lista, query }) => {
 
+    console.log(lista)
+
     return (
         <div className='container m-auto px-2 py-6 pt-20'>
             {/* <h2 className='text-white font-inter text-xl font-semibold tracking-wider mb-2'>{title}</h2> */}
@@ -15,7 +17,7 @@ const ListaDeBusca = ({ lista, query }) => {
             {/* <div className="flex items-center justify-center flex-wrap gap-8 "> */}
                 {lista.length > 0 ? (
                     lista.map((item) => (
-                        <div key={item.id} className="max-w-40 flex items-center justify-center bg-red-900">
+                        <div key={item.id} className="max-w-40 flex flex-col items-center justify-center">
                             <Card midia={item} />
                         </div>
                     ))

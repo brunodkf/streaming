@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { useMediaDetails } from '../../hooks/useMediaDetails';
 
-export const Card = ({ midia, ordenado, index }) => {
+export const Card = ({ midia }) => {
 
     const { media } = useMediaDetails(midia);
 

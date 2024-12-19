@@ -41,7 +41,7 @@ export const Navbar = () => {
                         <li className='cursor-pointer'>
                             Animes
                         </li>
-                        
+
                         <li className='hidden lg:block' >
                             Contato
                         </li>
@@ -56,18 +56,6 @@ export const Navbar = () => {
                     <IoMoonSharp className='hidden text-4xl p-2 rounded-full bg-preto-claro text-gray-50' />
                 </div>
 
-                {/* <ul className='hidden'>
-                    <li>
-                        <Link to='/'>
-                            Início
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to='/movie'>
-                            Movie
-                        </Link>
-                    </li>
-                </ul> */}
             </nav>
         </div>
     )
