@@ -11,7 +11,7 @@ const apiKey = import.meta.env.VITE_API_KEY;
 const Search = () => {
 
     const [searchParams] = useSearchParams();
-    const query = searchParams.get("query");
+    const query = searchParams.get("query") || "";
 
     const [resultados, setResultados] = useState([]);
 
