@@ -28,6 +28,7 @@ const Search = () => {
     };
     useEffect(() => {
         if (query) { // Evita busca com query vazia
+            console.log("Query:", query);
             const searchWithQueryURL = `${searchUrl}?${apiKey}&query=${query}`;
             getSearchResultados(searchWithQueryURL);
         }
