@@ -77,7 +77,7 @@ const Banner = () => {
         <section id='banner' className="banner w-full h-svh relative bg-cover bg-no-repeat bg-center flex items-end overflow-clip" style={{ backgroundImage: `url(${media.background})` }}>
 
             <div className="banner__container lg:container w-full h-3/4 flex flex-col justify-end
-             lg:h-full lg:flex-row lg:justify-normal lg:items-center lg:px-8 md:justify-center relative mx-auto z-10 
+             lg:h-full lg:flex-row lg:justify-between lg:items-center lg:px-8 md:justify-center relative mx-auto z-10 
              bg-gradient-to-t from-10% from-preto-claro md:from-preto-escuro lg:bg-none">
 
                 <div className='banner__informacoes lg:w-2/4 lg:m-0 p-3 pb-0 sm:p-8   md:container md:m-auto md:p-0 md:px-4'>
@@ -127,7 +127,7 @@ const Banner = () => {
                     </div>
                 </div>
 
-                <div className='banner__trailers xl:h-1/2 lg:w-2/4 h-2/4 lg:h-3/4 flex flex-col items-center bg-gradient-to-t from-preto-claro md:bg-none'>
+                <div className='banner__trailers lg:w-1/4 h-2/4 lg:h-3/4 xl:h-1/2 flex flex-col items-center bg-gradient-to-t from-preto-claro md:bg-none'>
                     <Swiper
                         className='w-full h-1/3 mt-10 sm:mt-10 lg:h-full xl:mt-1 2xl:mt-10'
                         modules={[Navigation, A11y, Scrollbar, Pagination]}

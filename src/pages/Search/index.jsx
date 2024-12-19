@@ -33,9 +33,7 @@ const Search = () => {
         }
     }, [query]);
 
-    console.log(resultados)
-
-    const encontrados = resultados.filter((e) => e.poster_path !== null)
+    const encontrados = resultados.filter((e) => (e.media_type === "tv" || e.media_type === "movie") && e.poster_path != null )
     console.log(encontrados)
 
     return (

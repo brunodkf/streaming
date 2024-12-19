@@ -8,6 +8,7 @@ import { MdSunny } from "react-icons/md";
 import { IoMoonSharp } from "react-icons/io5";
 
 import { LuUser2 } from "react-icons/lu";
+import { Scroll } from '../Scroll';
 
 export const Navbar = () => {
 
@@ -19,20 +20,28 @@ export const Navbar = () => {
                 <div className='flex gap-3'>
 
                     <ul className='hidden md:flex items-center gap-8 text-white tracking-wider mr-10 '>
-                        <li>
+                        <li className='cursor-pointer'>
                             <Link to='/'>
                                 Início
                             </Link>
                         </li>
-                        <li>
-                            Filmes
+
+                        <li className='cursor-pointer'>
+                            <Scroll to={'filme'} smooth={true} duration={500}>
+                                Filmes
+                            </Scroll>
                         </li>
-                        <li>
-                            Séries
+
+                        <li className='cursor-pointer'>
+                            <Scroll to={'serie'} smooth={true} duration={500}>
+                                Séries
+                            </Scroll>
                         </li>
-                        <li>
+
+                        <li className='cursor-pointer'>
                             Animes
                         </li>
+                        
                         <li className='hidden lg:block' >
                             Contato
                         </li>

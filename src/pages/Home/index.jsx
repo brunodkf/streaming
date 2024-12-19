@@ -47,9 +47,9 @@ const Home = () => {
 
                 <MidBanner/>
 
-                <ListaDeMidias title={"Filmes"} lista={listPopular} />  {/*FILMES EM ALTA*/}
+                <ListaDeMidias id={'filme'} title={"Filmes"} lista={listPopular} />  {/*FILMES EM ALTA*/}
 
-                <ListaDeMidias title={"Séries"} lista={listTrendingTv} />  {/*SERIES EM ALTA*/}
+                <ListaDeMidias id={'serie'} title={"Séries"} lista={listTrendingTv} />  {/*SERIES EM ALTA*/}
 
             </section>
 
