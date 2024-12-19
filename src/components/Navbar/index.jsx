@@ -16,7 +16,7 @@ export const Navbar = () => {
         <div className="navbar w-full z-50 absolute lg:bg-gradient-to-b from-20% from-preto-transparente ">
             <nav className='navbar__container container m-auto p-4 flex items-center justify-between' id="navbar">
                 <Link to='/'>
-                    <img className='w-20' src={Logo} alt="Logo" />
+                    <img className='w-20 cursor-pointer' src={Logo} alt="Logo" />
                 </Link>
 
 
