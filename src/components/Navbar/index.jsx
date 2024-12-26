@@ -1,10 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import Logo from '/logo_white.webp'
-import { CgMenu } from "react-icons/cg";
 import { IoSettingsOutline } from "react-icons/io5";
 import { IoSearch } from "react-icons/io5";
-import { MdSunny } from "react-icons/md";
 import { IoMoonSharp } from "react-icons/io5";
 
 import { LuUser2 } from "react-icons/lu";

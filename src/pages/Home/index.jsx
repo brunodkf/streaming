@@ -1,18 +1,7 @@
 import { useContext } from 'react';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-
 import Banner from '../../components/Banner';
 import ListaDeMidias from '../../components/ListaDeMidias';
-import { Card } from '../../components/Card';
-
-import { isolarMidia } from '../../services/utils';
-import { Link } from 'react-router-dom';
 import Footer from '../../components/Footer';
 import { StreamingContext } from '../../context/StreamingContext';
 import { Patrocinadores } from '../../components/Patrocinadores';

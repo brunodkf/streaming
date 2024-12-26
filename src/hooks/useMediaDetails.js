@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const apiKey = import.meta.env.VITE_API_KEY;
 const chamadaApi = import.meta.env.VITE_API;

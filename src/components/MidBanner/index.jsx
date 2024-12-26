@@ -17,6 +17,8 @@ export const MidBanner = () => {
 
     const { media } = useMediaDetails(midiaSelecionada);
 
+    console.log(media)
+
     return (
         <div className='midBanner w-full min-h-60 relative flex items-center justify-center  my-10 
     bg-center bg-no-repeat bg-cover before:content-[""] before:absolute before:block before:w-full before:h-full
