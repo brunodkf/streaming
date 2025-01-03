@@ -2,7 +2,7 @@
   <a href="https://streaming-att.netlify.app/">
     <img src="https://streaming-att.netlify.app/logo_white.webp" alt="Logo MOVIE" width="70" height="60">
   </a>
-  <h1 align="center"> 🚧🚧 EM CONSTRUÇÃO 🚧🚧</h1>
+<!--   <h1 align="center"> 🚧🚧 EM CONSTRUÇÃO 🚧🚧</h1> -->
   <h1 align="center">Streaming Movie App</h1>
 </p>
 
@@ -57,6 +57,18 @@ O conteúdo do Movie App é centrado em uma experiência de navegação e explor
 
 ![image](https://github.com/user-attachments/assets/0d376023-031a-4e5d-95b1-d04e94fe76e3)
 
+## 🎨: DESTAQUE 
+
+Interação com as mídias em destaque para outras informações da mesma.
+Onde assistir, Elenco, Trailers e mais!
+
+![image](https://github.com/user-attachments/assets/6824fc53-e5f9-4546-9933-36e9d713a8cb)
+
+## 🎨: PESQUISA
+
+Caso esteja a procura de alguma mídia específica, é possível fazer o search da mesma e verificar suas informações.
+
+![image](https://github.com/user-attachments/assets/643af2d5-6d6e-4981-8244-b509290aad2a)
 
 
 
@@ -64,7 +76,7 @@ O conteúdo do Movie App é centrado em uma experiência de navegação e explor
 
 Sim!!! O projeto pode ser visitado no link da descrição do projeto ou no link logo abaixo:
 
-<a href="https://streaming-att.netlify.app/" target="_blank"> REACT APP </a>
+<a style="text-decoration: none; color: white; background-color: #2c2c2c;" href="https://streaming-att.netlify.app/" target="_blank" > REACT APP </a>
 
 Só clicar e conferir!
 
